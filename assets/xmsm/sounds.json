@@ -1,0 +1,146 @@
+{
+    "dage1": {
+        "sounds": [
+            {
+                "name": "xmsm:dage1",
+                "stream": true
+            }
+        ]
+    },
+    "dage2": {
+        "sounds": [
+            {
+                "name": "xmsm:dage2",
+                "stream": true
+            }
+        ]
+    },
+    "dage3": {
+        "sounds": [
+            {
+                "name": "xmsm:dage3",
+                "stream": true
+            }
+        ]
+    },
+    "anlang1": {
+        "sounds": [
+            {
+                "name": "xmsm:anlang1",
+                "stream": true
+            }
+        ]
+    },
+    "anlang2": {
+        "sounds": [
+            {
+                "name": "xmsm:anlang2",
+                "stream": true
+            }
+        ]
+    },
+    "anlang3": {
+        "sounds": [
+            {
+                "name": "xmsm:anlang3",
+                "stream": true
+            }
+        ]
+    },
+    "anshuang1": {
+        "sounds": [
+            {
+                "name": "xmsm:anshuang1",
+                "stream": true
+            }
+        ]
+    },
+    "anshuang2": {
+        "sounds": [
+            {
+                "name": "xmsm:anshuang2",
+                "stream": true
+            }
+        ]
+    },
+    "anshuang3": {
+        "sounds": [
+            {
+                "name": "xmsm:anshuang3",
+                "stream": true
+            }
+        ]
+    },
+    "guanglili1": {
+        "sounds": [
+            {
+                "name": "xmsm:guanglili1",
+                "stream": true
+            }
+        ]
+    },
+    "guanglili2": {
+        "sounds": [
+            {
+                "name": "xmsm:guanglili2",
+                "stream": true
+            }
+        ]
+    },
+    "guanglili3": {
+        "sounds": [
+            {
+                "name": "xmsm:guanglili3",
+                "stream": true
+            }
+        ]
+    },
+    "anyisheng1": {
+        "sounds": [
+            {
+                "name": "xmsm:anyisheng1",
+                "stream": true
+            }
+        ]
+    },
+    "anyisheng2": {
+        "sounds": [
+            {
+                "name": "xmsm:anyisheng2",
+                "stream": true
+            }
+        ]
+    },
+    "anyisheng3": {
+        "sounds": [
+            {
+                "name": "xmsm:anyisheng3",
+                "stream": true
+            }
+        ]
+    },
+    "guangheipi1": {
+        "sounds": [
+            {
+                "name": "xmsm:guangheipi1",
+                "stream": true
+            }
+        ]
+    },
+    "guangheipi2": {
+        "sounds": [
+            {
+                "name": "xmsm:guangheipi2",
+                "stream": true
+            }
+        ]
+    },
+    "guangheipi3": {
+        "sounds": [
+            {
+                "name": "xmsm:guangheipi3",
+                "stream": true
+            }
+        ]
+    }
+}

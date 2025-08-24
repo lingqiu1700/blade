@@ -1,0 +1,98 @@
+{
+    "music.t1": {
+        "sounds": [
+            {
+                "name": "tayori:t1",
+                "stream": true
+            }
+        ]
+    },
+    "music.t2": {
+        "sounds": [
+            {
+                "name": "tayori:t2",
+                "stream": true
+            }
+        ]
+    },
+    "music.t3": {
+        "sounds": [
+            {
+                "name": "tayori:t3",
+                "stream": true
+            }
+        ]
+    },
+    "music.t4": {
+        "sounds": [
+            {
+                "name": "tayori:t4",
+                "stream": true
+            }
+        ]
+    },
+    "music.t5": {
+        "sounds": [
+            {
+                "name": "tayori:t5",
+                "stream": true
+            }
+        ]
+    },
+    "music.t6": {
+        "sounds": [
+            {
+                "name": "tayori:t6",
+                "stream": true
+            }
+        ]
+    },
+    "music.t7": {
+        "sounds": [
+            {
+                "name": "tayori:t7",
+                "stream": true
+            }
+        ]
+    },
+    "music.t8": {
+        "sounds": [
+            {
+                "name": "tayori:t8",
+                "stream": true
+            }
+        ]
+    },
+    "music.t9": {
+        "sounds": [
+            {
+                "name": "tayori:t9",
+                "stream": true
+            }
+        ]
+    },
+    "music.t10": {
+        "sounds": [
+            {
+                "name": "tayori:t10",
+                "stream": true
+            }
+        ]
+    },
+    "music.t11": {
+        "sounds": [
+            {
+                "name": "tayori:t11",
+                "stream": true
+            }
+        ]
+    },
+    "music.yue": {
+        "sounds": [
+            {
+                "name": "tayori:yue",
+                "stream": true
+            }
+        ]
+    }
+}
