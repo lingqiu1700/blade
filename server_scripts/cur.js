@@ -16,6 +16,7 @@ const ANLONG = 'xmsm:anlong';
 const ghp = 'xmsm:guangheipi';
 const BUQU = 'xmsm:buxu';
 const DAGE = 'xmsm:dage';
+const JIAOYUE = 'xmsm:jiaoyue';
 
 // 定义一个函数，用于检查玩家是否装备了指定的饰品
 function isEquippedCurio(entity, curioId) {
@@ -137,9 +138,7 @@ PlayerEvents.tick(event => {
         }
         if (pd.wudiTick >= 200) {
             pd.wudiTick = 0;
-            if (player.potionEffects.isActive('minecraft:resistance') == 0) {
-                player.potionEffects.add('minecraft:resistance', 20, 4, false, false); // 添加抗性效果
-            }
+            player.potionEffects.add('minecraft:resistance', 20, 4, false, false); // 添加抗性效果
         }
     }
 
@@ -254,12 +253,14 @@ let TTT = {};
 let FFF = {};
 let GGG = {};
 let jizhongli = false;
+let random = {};
 
 EntityEvents.hurt(event => {
     const entity = event.entity;
     const damage = event.damage; // 伤害数值（浮点）
     const source = event.source; // 伤害来源
     const attacker = source.actual;
+    const player = event.player;
 
     if (attacker && attacker.isPlayer() && isEquippedCurio(attacker, DAGE)) {
         if (AAA[attacker.id] >0){
@@ -277,11 +278,23 @@ EntityEvents.hurt(event => {
         AAA[entity.id] = DAGEdamage+damage; // 累加伤害
         BBB[entity.id] = true;
     }
+
+
+    //皎月
+    if (random < 20) {
+    if (isEquippedCurio(entity, JIAOYUE)){
+            entity.potionEffects.add('minecraft:resistance',2, 4, false, false); // 添加抗性效果
+            entity.tell(Text.lightPurple("皎梦月夜"));
+            entity.potionEffects.add('xmsm:jiaoyue', 200, 0, false, false); // 添加皎月效果
+        }
+    }
 });
 
 PlayerEvents.tick(event => {
 
-    const player = event.player
+    random = Math.random() * 100; // 每个刻生成一个新的随机数
+
+    const player = event.player;
     const playerId = player.id;
 
     if (!isEquippedCurio(player, DAGE)) {

@@ -268,6 +268,11 @@ ServerEvents.recipes(event => {
       'minecraft:rotten_flesh'    // 输入物品：腐肉
   )
 
+  event.smelting(
+    'minecraft:wither_skeleton_skull',        // 输出物品：凋零骷髅头颅
+    'minecraft:skeleton_skull'    // 输入物品：骷髅头颅
+  )
+
   event.shapeless(
     '2x minecraft:crying_obsidian', // 输出物品：2个哭泣的黑曜石
     ['minecraft:obsidian', 'minecraft:amethyst_shard','minecraft:obsidian'] // 输入物品：黑曜石和紫水晶碎片

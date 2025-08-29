@@ -114,3 +114,16 @@ StartupEvents.registry('mob_effect', event => {
     entity.hurt(magic, damage); // 对实体造成伤害
   })
 })
+
+StartupEvents.registry('mob_effect', event => {
+  event.create('xmsm:jiaoyue')
+  .displayName('皎月')
+  .color(0xAFECCC) // 效果粒子颜色设置为淡蓝色
+  .beneficial() // 归类为有益效果
+    .modifyAttribute(
+      'minecraft:generic.attack_damage', // 要修改的属性：攻击伤害
+      '4ba5894c-af49-4219-8a1e-f1031b5c8f50', // 唯一标识符 UUID
+      0.2, // 增加20%攻击力
+      "multiply_total" // 按最终值进行乘法操作
+    )
+})

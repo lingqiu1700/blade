@@ -38,4 +38,11 @@ LootJS.modifiers((event) => {
             .killedByPlayer()
             .addLoot("xmsm:bloodessence")
     })
+
+    targets.forEach(() => {
+        event
+        .addEntityLootModifier("cataclysm:netherite_monstrosity")
+        .killedByPlayer()
+        .addLoot(Item.of("minecraft:netherite_block", 3));
+    });
 })

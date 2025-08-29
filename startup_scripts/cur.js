@@ -586,6 +586,27 @@ StartupEvents.registry('item', event => {
         .tag("curios:trinkets")
     })
 
+StartupEvents.registry('item', event => {
+    event
+        .create('xmsm:jiaoyue')
+        .maxStackSize(1)
+        .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+            .canEquip((item, context) => {
+                let entity = context.entity()
+                return entity instanceof $Player && $SuperpositionHandler.isTheCursedOne(entity)
+            })
+            .canUnequip((item, context) => {
+                let entity = context.entity()
+                return entity instanceof $Player && entity.isCreative()
+            })
+            .modifyAttribute("minecraft:generic.max_health", "max_health", 20, "addition")
+            .modifyAttribute("minecraft:generic.attack_damage", "attack_damage", 10, "addition")
+        )
+        .tag("curios:trinkets")
+})
+
+
+
 //效果饰品
 //不屈
 StartupEvents.registry('item', event => {

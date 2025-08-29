@@ -38,7 +38,7 @@ ServerEvents.recipes(event => {
         },
         "craftType": "sabbath", //仪式类型
         "entity_to_summon": "callfromthedepth_:agonysoul", //召唤的实体
-        "soulCost": 200, //每秒灵魂消耗
+        "soulCost": 200, //每秒灵魂消耗 
         "duration": 30, //持续时间
         "ingredients": [
           {
