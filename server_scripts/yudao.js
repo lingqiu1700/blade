@@ -66,4 +66,27 @@ ServerEvents.recipes(event => {
         "consumptionRate": 10,  // 每tick消耗速率
         "drainRate": 2000  // 祭坛每tick流速
     })
+
+    event.custom({
+        "type": "bloodmagic:altar_blade",  // 配方类型是血魔法的祭坛
+        "input": {
+            "type": "slashblade:blade",  // 输入物品类型是 Slashblade 的刀
+            "item": "slashblade:slashblade",  // 输入物品是基础刀
+            "request": {  // 输入刀要求的条件
+                "kill": 18000,  // 杀敌数
+                "name": "slashblade_addon:nihilbx", // 刀的名字
+                "proud_soul": "400000",  // 魂量
+                "refine": 150 // 精炼
+            }
+        },
+        "output": {
+            "item": "slashblade:slashblade",  // 输出仍然是 Slashblade 的刀
+            "category": "equipment",
+        },
+        "blade": "legendblade:nihilbxex", // 指定刀
+        "upgradeLevel": 4, // 需要5级祭坛
+        "altarSyphon": 240000,  // 总消耗生命精华量（LP）
+        "consumptionRate": 50,  // 每tick消耗速率
+        "drainRate": 5000  // 祭坛每tick流速
+    })
 })
