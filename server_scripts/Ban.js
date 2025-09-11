@@ -13,4 +13,5 @@ ServerEvents.recipes(event => {
 
 ServerEvents.recipes(event => {
     event.remove({output: 'bloodmagic:altar'});
+    event.remove({id : 'primeval:day'});
 })

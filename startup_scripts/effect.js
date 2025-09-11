@@ -99,21 +99,6 @@ StartupEvents.registry('mob_effect', event => {
         )
 })
 
-StartupEvents.registry('mob_effect', event => {
-  event.create('xmsm:judu')
-  .displayName('剧毒')
-  .color(0x8B0000) // 效果粒子颜色设置为深红色
-  .harmful() // 归类为有害效果
-  .effectTick((entity, level) =>{
-    if (entity.age % 100 !=0){
-       return; // 每100tick触发一次
-    }
-    const world = entity.world;
-    const damage = entity.maxHealth * 0.10 * level; // 每100tick扣除10%最大生命值
-    const magic = world.damageSources().magic(); // 使用魔法伤害类型
-    entity.hurt(magic, damage); // 对实体造成伤害
-  })
-})
 
 StartupEvents.registry('mob_effect', event => {
   event.create('xmsm:jiaoyue')

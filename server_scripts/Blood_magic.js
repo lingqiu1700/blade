@@ -8,7 +8,7 @@ ServerEvents.recipes(event => {
             "type": "slashblade:blade",  // 输入物品类型是 Slashblade 的刀
             "item": "slashblade:slashblade",  // 输入物品是基础刀
             "request": {  // 输入刀要求的条件
-                "kill": 20,  // 杀敌数需要达到20
+                "kill": 200000000,  // 杀敌数需要达到20
                 "name": "slashblade_addon:nihilbx",  // 刀的名字要是 nihilbx
                 "proud_soul": 300,  // 拥有300魂量
                 "refine": 10  // 精炼等级达到10

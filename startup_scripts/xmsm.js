@@ -7,6 +7,9 @@ StartupEvents.registry("item", (event) => {
     event.create("xmsm:bloodessence","basic");//血精华
     event.create("xmsm:dark_matter","basic");//未完成的暗物质
     event.create("xmsm:bloodmoban","basic");//血模板
+    event.create("xmsm:yueguangshuqian");
+    event.create("xmsm:shengyueshuqian");
+    event.create("xmsm:jindeng");
 })
 
 StartupEvents.registry("sound_event", (event) => {
@@ -28,9 +31,6 @@ StartupEvents.registry("sound_event", (event) => {
     event.create("xmsm:guangheipi1");
     event.create("xmsm:guangheipi2");
     event.create("xmsm:guangheipi3");
-    event.create("xmsm:yueguangshuqian");
-    event.create("xmsm:shengyueshuqian");
-    event.create("xmsm:jindeng");
 })
 
 StartupEvents.registry("block", (event) => {

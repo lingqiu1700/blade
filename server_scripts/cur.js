@@ -170,6 +170,7 @@ PlayerEvents.tick(event => {
     if (isEquippedCurio(player, SHI)) {
         let pd = player.persistentData;
         pd.sinianTick = (pd.sinianTick ?? 0) + 1;
+        pd.huanmanTick = (pd.huanmanTick ?? 0) + 1;
         let entityList = event.level.getEntitiesWithin(AABB.of( // 检测15*15*15范围內的所有实体。
             player.x - 15,
             player.y - 15,
@@ -184,36 +185,38 @@ PlayerEvents.tick(event => {
                 if (entities.isLiving() && (entities.isPlayer() == 0))//判断是否有非玩家的生物实体
                 {
                     if (pd.sinianTick >= 999) {
-                        if (entities.potionEffects.isActive('xmsm:judu') == 0)//如果实体没有剧毒buff
+                        if (entities.potionEffects.isActive('minecraft:poison') == 0)//如果实体没有剧毒buff
                         {
-                            entities.potionEffects.add('xmsm:judu', 400, 0);//添加剧毒buff
+                            entities.potionEffects.add('minecraft:poison', 400, 0);//添加剧毒buff
                         }
                         else //如果有剧毒buff
                         {
-                            if ((entities.potionEffects.getDuration('xmsm:judu') <= 200))//如果剧毒持续时间小于5秒
+                            if ((entities.potionEffects.getDuration('minecraft:poison') <= 200))//如果剧毒持续时间小于5秒
                             {
-                                if (entities.potionEffects.getActive('xmsm:judu').amplifier < 2)//如果剧毒等级小于2级
+                                if (entities.potionEffects.getActive('minecraft:poison').amplifier < 2)//如果剧毒等级小于2级
                                 {
-                                    let potionLevel = entities.potionEffects.getActive('xmsm:judu').amplifier;
-                                    entities.potionEffects.add('xmsm:judu', 100, potionLevel + 1);//每隔1秒加1级
+                                    let potionLevel = entities.potionEffects.getActive('minecraft:poison').amplifier;
+                                    entities.potionEffects.add('minecraft:poison', 100, potionLevel + 1);//每隔1秒加1级
                                 }
                                 else {
-                                    entities.potionEffects.add('xmsm:judu', 100, 2);//最高3级
+                                    entities.potionEffects.add('minecraft:poison', 100, 2);//最高3级
                                 }
                             }
-                        }
-                        if (entities.potionEffects.isActive('minecraft:slowness') == 0)//如果实体没有缓慢buff
-                        {
-                            entities.potionEffects.add('minecraft:slowness', 100, 3);//添加缓慢buff
                         }
                         if (pd.sinianTick >1040){
                         pd.sinianTick = 0;
                         }
                     }
+                    if (pd.huanmanTick >= 100) {
+                        if (entities.potionEffects.isActive('minecraft:slowness') == 0)//如果实体没有缓慢buff
+                        {
+                            entities.potionEffects.add('minecraft:slowness', 100, 3);//添加缓慢buff
+                        }
                 }
             }
         }
     }
+}
 
     //如果玩家装备了E7神器
 

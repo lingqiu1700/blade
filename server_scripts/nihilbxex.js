@@ -42,6 +42,9 @@ PlayerEvents.tick(event => {
         if (nearby) {
             for (let entity of nearby) { // 遍历所有实体
                 if (entity.isLiving() && !entity.isPlayer()) { // 判断是否为生物且不是玩家
+                    if (!hasBleedingEntity) { // 施加破甲效果
+                        entity.potionEffects.add('xmsm:shouhu', 100, 5); // 给予破甲效果，持续200tick，等级1
+                    }
                     if (entity.potionEffects.isActive('l2complements:bleed')) { // 判断是否存在流血效果
                         hasBleedingEntity = true;
                         break;

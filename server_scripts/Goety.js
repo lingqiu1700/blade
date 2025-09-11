@@ -94,6 +94,49 @@ ServerEvents.recipes(event => {
     event.custom(
       {
         "type": "goety:ritual", //仪式配方
+        "ritual_type": "goety:summon", //召唤
+        "activation_item": {
+          "item": "borm_in_chaos_v1:death_totem" //死亡图腾
+        },
+        "craftType": "sabbath", //仪式类型
+        "entity_to_summon": "irons_spellbooks:dead_king", //召唤的实体(这里是死王)
+        "soulCost": 300, //每秒灵魂消耗
+        "duration": 60, //持续时间
+        "ingredients": [
+          {
+            "item": "twilightforest:alpha_yeti_trophy"
+          },
+          {
+            "item": "twilightforest:naga_trophy"
+          },
+          {
+            "item": "twilightforest:lich_trophy"
+          },
+          {
+            "item": "twilightforest:minoshroom_trophy"
+          },
+          {
+            "item": "twilightforest:snow_queen_trophy"
+          },
+          {
+            "item": "twilightforest:ur_ghast_trophy"
+          },
+          {
+            "item": "twilightforest:hydra_trophy"
+          },
+          {
+            "item": "twilightforest:knight_phantom_trophy"
+          }
+        ],
+        "result": {
+          "item": "goety:jei_dummy/none" //不要管这个
+        }
+      }
+    )
+
+    event.custom(
+      {
+        "type": "goety:ritual", //仪式配方
         "ritual_type": "goety:craft", //制作
         "activation_item":{
           "item": "projecte:dark_matter" //激活物品
