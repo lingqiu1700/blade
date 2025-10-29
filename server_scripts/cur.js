@@ -1,7 +1,8 @@
 // 不知道写啥
 const CuriosApi = Java.loadClass('top.theillusivec4.curios.api.CuriosApi');
 const curiosHelper = CuriosApi.getCuriosHelper();
-
+let $Player = Java.loadClass("net.minecraft.world.entity.player.Player")
+let $SuperpositionHandler = Java.loadClass("com.aizistral.enigmaticlegacy.handlers.SuperpositionHandler")
 // 定义要检测的饰品 ID
 const SHAN = 'xmsm:shan';
 const SHAN0 = 'xmsm:shan0'; 
@@ -17,6 +18,9 @@ const ghp = 'xmsm:guangheipi';
 const BUQU = 'xmsm:buxu';
 const DAGE = 'xmsm:dage';
 const JIAOYUE = 'xmsm:jiaoyue';
+const GUANGMA = 'xmsm:guangma';
+const TIANPING ='xmsm:tianping';
+
 
 // 定义一个函数，用于检查玩家是否装备了指定的饰品
 function isEquippedCurio(entity, curioId) {
@@ -30,6 +34,10 @@ PlayerEvents.tick(event => {
 
     // 如果玩家不存活，则不进行处理
     if (!player.isAlive()) return;
+
+
+    //测试
+
 
 
     // 检查玩家是否装备了指定的饰品
@@ -236,8 +244,72 @@ PlayerEvents.tick(event => {
             player.potionEffects.add('minecraft:resistance', 60, 4, false, false); // 添加抗性效果
         }
     }
+
+
+    const HARMFUL_EFFECT = [
+  'minecraft:slowness',
+  'minecraft:poison',
+  'minecraft:weakness',
+  'minecraft:levitation',
+  'minecraft:darkness',
+  'minecraft:nausea',
+  'minecraft:bad_omen',
+  'minecraft:unluck',
+  'minecraft:blindness',
+  'minecraft:levitation',
+  'mutantmonsters:chemical_x',
+  'l2complements:flame',
+  'l2complements:frozen',
+  'l2complements:stone_cage',
+  'l2complements:curse',
+  'l2complements:armor_reduce',
+  'alexscaves:magnetizing',
+];          
+
+    if (player.potionEffects.isActive('xmsm:mianyi')) {
+        HARMFUL_EFFECT.forEach(effect => {
+                player.removeEffect(effect);
+        });
+    }
 });
 
+    //定义的变量
+    let busi = {};
+    let guangmatime = {};
+    let gmTick = {};
+
+    PlayerEvents.tick(event => {
+
+    const player = event.player;
+
+        //光马额外效果
+    if (isEquippedCurio(player, GUANGMA)){
+
+        guangmatime[player.id] = (guangmatime[player.id] || 0) + 1;
+            gmTick[player.id] = (gmTick[player.id] || 0) + 1;
+
+        if ( guangmatime[player.id]>= 200){
+            player.potionEffects.add('xmsm:mianyi', 100,0, false, false); // 添加免疫效果
+            guangmatime[player.id] = 0;
+        }
+    }
+    })
+
+    EntityEvents.hurt(event => {
+    const entity = event.entity;
+    const damage = event.damage; // 伤害数值（浮点）
+    const source = event.source;
+    const health = entity.health;
+    const maxHealth = entity.maxHealth;
+        //光马
+    if (isEquippedCurio(entity, GUANGMA)){
+        if (gmTick[entity.id]>=10){
+            guangmatime[entity.id] = (guangmatime[entity.id] || 0) + 20;
+            gmTick[entity.id] = 0;
+        }
+    }
+
+});
 
 
 
@@ -284,8 +356,8 @@ EntityEvents.hurt(event => {
 
 
     //皎月
-    if (random < 20) {
     if (isEquippedCurio(entity, JIAOYUE)){
+        if (random < 20) {
             entity.potionEffects.add('minecraft:resistance',2, 4, false, false); // 添加抗性效果
             entity.tell(Text.lightPurple("皎梦月夜"));
             entity.potionEffects.add('xmsm:jiaoyue', 200, 0, false, false); // 添加皎月效果

@@ -43,3 +43,13 @@ EntityEvents.death("minecraft:phantom", event => {
       }
     }
   })
+
+  EntityEvents.death("minecraft:ender_dragon", event => {
+    if(event.source.actual.isPlayer()) {
+      let killer = event.getSource()
+      let heldItem = killer.player.mainHandItem;
+      if (heldItem.id == 'slashblade:slashblade'){
+        killer.player.give("minecraft:dragon_head")
+      }
+    }
+  })

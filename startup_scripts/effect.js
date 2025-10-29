@@ -99,7 +99,6 @@ StartupEvents.registry('mob_effect', event => {
         )
 })
 
-
 StartupEvents.registry('mob_effect', event => {
   event.create('xmsm:jiaoyue')
   .displayName('皎月')
@@ -110,5 +109,31 @@ StartupEvents.registry('mob_effect', event => {
       '4ba5894c-af49-4219-8a1e-f1031b5c8f50', // 唯一标识符 UUID
       0.2, // 增加20%攻击力
       "multiply_total" // 按最终值进行乘法操作
+    )
+})
+
+StartupEvents.registry('mob_effect', event => {
+  event.create('xmsm:mianyi')
+  .displayName('免疫')
+  .color(0x00FFFF) // 效果粒子颜色设置为青色
+  .beneficial() // 归类为有益效果
+})
+
+StartupEvents.registry('mob_effect', event => {
+  event.create('xmsm:shixue')
+  .displayName('嗜血')
+  .color(0x8B0000) // 效果粒子颜色设置为深红色
+  .beneficial() // 归类为有益效果
+    .modifyAttribute(
+      'minecraft:generic.attack_damage', // 要修改的属性：攻击伤害
+      '2c3d4e5f-6a7b-8c9d-0e1f-2a3b4c5d6e7f', // 唯一标识符 UUID
+      0.05, // 增加25%攻击力
+      "multiply_total" // 按最终值进行乘法操作
+    )
+    .modifyAttribute(
+        'minecraft:generic.movement_speed', // 要修改的属性：速度movement_speed
+        'f1e2d3c4-b5a6-7980-1a2b-3c4d5e6f7g8h', // 唯一标识符 UUID
+        0.01, // 增加 0.1 的速度
+        "multiply_total" // 按最终值进行乘法操作
     )
 })

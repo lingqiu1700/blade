@@ -1,5 +1,25 @@
 let $Player = Java.loadClass("net.minecraft.world.entity.player.Player")
 let $SuperpositionHandler = Java.loadClass("com.aizistral.enigmaticlegacy.handlers.SuperpositionHandler")
+const CuriosApi = Java.loadClass('top.theillusivec4.curios.api.CuriosApi');
+const curiosHelper = CuriosApi.getCuriosHelper();
+
+const SHAN = 'xmsm:shan';
+const SHAN0 = 'xmsm:shan0'; 
+const HEALING1 = 'xmsm:healing1';
+const HEALING2 = 'xmsm:healing2';
+const SHI = 'xmsm:shi';
+const LILI = 'xmsm:guanglili';
+const AN = 'xmsm:anshuang';
+const SINIAN = 'legendblade:nihilbxex';
+const GLJ = 'xmsm:glj';
+const ANLONG = 'xmsm:anlong';
+const ghp = 'xmsm:guangheipi';
+const BUQU = 'xmsm:buxu';
+const DAGE = 'xmsm:dage';
+const JIAOYUE = 'xmsm:jiaoyue';
+const GUANGMA = 'xmsm:guangma';
+const TIANPING ='xmsm:tianping';
+
  
 //速度类饰品
 StartupEvents.registry('item', event => {
@@ -357,34 +377,6 @@ StartupEvents.registry('item', event => {
 })
 
 
-//开闪！
-StartupEvents.registry('item', event => {
-    event
-        .create('xmsm:shan')//二十闪避速度
-        .maxStackSize(1)
-        .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
-            .canEquip((item, context) => {
-                let entity = context.entity()
-                return entity instanceof $Player && $SuperpositionHandler.isTheCursedOne(entity)
-            })
-            .canEquip((item, context) => {
-                let entity = context.entity()
-                const shansound = ["xmsm:anlang1", "xmsm:anlang2", "xmsm:anlang3"]
-                const randomSound = shansound[Math.floor(Math.random() * shansound.length)]
-                entity.playSound(randomSound, 1, 1)
-                return entity instanceof $Player && $SuperpositionHandler.isTheCursedOne(entity)
-            })
-            .canUnequip((item, context) => {
-                let entity = context.entity()
-                return entity instanceof $Player && entity.isCreative()
-            })
-                        .curioTick((stack,context) => {
-                let entity = context.entity()
-                entity.potionEffects.add("xmsm:baozou", 200, 0, false, false)
-            })
-        )
-        .tag("curios:trinkets")
-})
 
 StartupEvents.registry('item', event => {
     event
@@ -541,6 +533,38 @@ StartupEvents.registry('item', event => {
         .tag("curios:trinkets")
     })
 
+
+    //暗狼
+StartupEvents.registry('item', event => {
+    event
+        .create('xmsm:shan')//二十闪避速度
+        .maxStackSize(1)
+        .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+            .canEquip((item, context) => {
+                let entity = context.entity()
+                return entity instanceof $Player && $SuperpositionHandler.isTheCursedOne(entity)
+            })
+            .canEquip((item, context) => {
+                let entity = context.entity()
+                const shansound = ["xmsm:anlang1", "xmsm:anlang2", "xmsm:anlang3"]
+                const randomSound = shansound[Math.floor(Math.random() * shansound.length)]
+                entity.playSound(randomSound, 1, 1)
+                return entity instanceof $Player && $SuperpositionHandler.isTheCursedOne(entity)
+            })
+            .canUnequip((item, context) => {
+                let entity = context.entity()
+                return entity instanceof $Player && entity.isCreative()
+            })
+                        .curioTick((stack,context) => {
+                let entity = context.entity()
+                entity.potionEffects.add("xmsm:baozou", 200, 0, false, false)
+            })
+        )
+        .tag("curios:trinkets")
+})
+
+
+//大哥
 StartupEvents.registry('item', event => {
     event
         .create('xmsm:dage')
@@ -562,6 +586,27 @@ StartupEvents.registry('item', event => {
                 return entity instanceof $Player && $SuperpositionHandler.isTheCursedOne(entity)
             })
             .modifyAttribute("minecraft:generic.movement_speed", "movement_speed", 0.2, "addition")
+        )
+        .tag("curios:trinkets")
+})
+
+
+//光马
+StartupEvents.registry('item', event => {
+    event
+        .create('xmsm:guangma')
+        .maxStackSize(1)
+        .attachCapability(CuriosCapabilityBuilder.CURIOS.itemStack()
+            .canEquip((item, context) => {
+                let entity = context.entity()
+                return entity instanceof $Player && $SuperpositionHandler.isTheCursedOne(entity)
+            })
+            .canUnequip((item, context) => {
+                let entity = context.entity()
+                return entity instanceof $Player && entity.isCreative()
+            })
+            .modifyAttribute("minecraft:generic.max_health", "max_health", 20, "addition")
+            .modifyAttribute("minecraft:generic.movement_speed", "movement_speed", 0.05, "addition")
         )
         .tag("curios:trinkets")
 })
