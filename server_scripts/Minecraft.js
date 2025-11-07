@@ -262,6 +262,86 @@ ServerEvents.recipes(event => {
     }
   )
 
+  event.shaped(
+    Item.of('lkartifacts:knight_upgrade_smithing_template'),
+    [
+      'ABA',
+      'ACA',
+      'AAA'
+    ],
+    {
+      A: 'minecraft:iron_block',
+      B: '#forge:stone',
+      C: 'minecraft:diamond',
+    }
+  )
+
+  event.shaped(
+    Item.of('lkartifacts:slayer_upgrade_smithing_template'),
+    [
+      'ABA',
+      'ACA',
+      'AAA'
+    ],
+    {
+      A: 'minecraft:diamond_block',
+      B: '#forge:stone',
+      C: 'minecraft:netherite_ingot',
+    }
+  )
+
+  event.shaped(
+    Item.of('lkartifacts:lava_upgrade_smithing_template'),
+    [
+      'ABA',
+      'ACA',
+      'AAA'
+    ],
+    {
+      A: 'celestial_core:fire_essence',
+      B: '#forge:stone',
+      C: 'minecraft:diamond',
+    }
+  )
+
+  event.shaped(
+    Item.of('lkartifacts:broken_star_small'),
+    [
+      ' A ',
+      'ABA',
+      ' A '
+    ],
+    {
+      A: 'minecraft:diamond',
+      B: 'minecraft:iron_nugget',
+    }
+  )
+
+  event.shaped(
+    Item.of('lkartifacts:broken_star_long'),
+    [
+      ' A ',
+      'ABA',
+      ' A '
+    ],
+    {
+      A: 'minecraft:diamond_block',
+      B: 'minecraft:iron_nugget',
+    }
+  )
+
+  event.shaped(
+    Item.of('lkartifacts:broken_star_big'),
+    [
+      '   ',
+      ' AA',
+      ' AA'
+    ],
+    {
+      A: 'lkartifacts:broken_star_long',
+    }
+  )
+
   // 自定义熔炉熔炼配方：腐肉烧制成皮革
   event.smelting(
       'minecraft:leather',        // 输出物品：皮革
@@ -357,6 +437,51 @@ ServerEvents.recipes(event => {
             "item": "xmsm:shi"
         }
     })
+
+    event.custom(
+      {
+        "type": "goety:ritual", //仪式配方
+        "ritual_type": "goety:craft", //制作
+        "activation_item": {
+          "item": "alexsmobs:blood_sac",
+        },
+        "craftType": "forge", //制作类型
+        "soulCost": 50, //灵魂消耗
+        "duration": 20, //持续时间
+        "ingredients": [
+          {
+            "item": "xmsm:bloodclot"
+          },
+          {
+            "item": "xmsm:bloodclot"
+          },
+          {
+            "item": "xmsm:bloodclot"
+          },
+          {
+            "item": "xmsm:bloodclot"
+          },
+          {
+            "item": "xmsm:bloodclot"
+          },
+          {
+            "item": "xmsm:bloodclot"
+          },
+          {
+            "item": "xmsm:bloodclot"
+          },
+          {
+            "item": "xmsm:bloodclot"
+          },
+          {
+            "item": "xmsm:bloodclot"
+          },
+        ],
+        "result": {
+          "item": "xmsm:bloodessence"
+        }
+      }
+    )
 })
 
 
@@ -374,3 +499,117 @@ ServerEvents.recipes(event => {
     }
   )
 });
+
+
+ServerEvents.recipes(event => {
+  // 合成配方：primeval:day
+  event.custom({
+    "type": "slashblade:shaped_blade",
+    "blade": "primeval:day", // 合成后刀的内部ID
+    "category": "equipment",
+    "key": {
+      // A - primeval:real
+      "A": {
+        "type": "slashblade:blade",
+        "item": "slashblade:slashblade",
+        "request": {
+          "kill": 250,
+          "name": "primeval:real",
+          "proud_soul": 2000,
+          "refine": 7
+        }
+      },
+      // B - primeval:calendar_system
+      "B": {
+        "type": "slashblade:blade",
+        "item": "slashblade:slashblade",
+        "request": {
+          "kill": 250,
+          "name": "primeval:calendar_system",
+          "proud_soul": 2000,
+          "refine": 7
+        }
+      },
+      // C - primeval:speak
+      "C": {
+        "type": "slashblade:blade",
+        "item": "slashblade:slashblade",
+        "request": {
+          "kill": 250,
+          "name": "primeval:speak",
+          "proud_soul": 2000,
+          "refine": 7
+        }
+      },
+      // D - primeval:value
+      "D": {
+        "type": "slashblade:blade",
+        "item": "slashblade:slashblade",
+        "request": {
+          "kill": 250,
+          "name": "primeval:value",
+          "proud_soul": 2000,
+          "refine": 7
+        }
+      },
+      // E - primeval:rule
+      "E": {
+        "type": "slashblade:blade",
+        "item": "slashblade:slashblade",
+        "request": {
+          "kill": 250,
+          "name": "primeval:rule",
+          "proud_soul": 2000,
+          "refine": 7
+        }
+      },
+      // F - primeval:significance
+      "F": {
+        "type": "slashblade:blade",
+        "item": "slashblade:slashblade",
+        "request": {
+          "kill": 250,
+          "name": "primeval:significance",
+          "proud_soul": 2000,
+          "refine": 7
+        }
+      },
+      // G - primeval:dignity
+      "G": {
+        "type": "slashblade:blade",
+        "item": "slashblade:slashblade",
+        "request": {
+          "kill": 250,
+          "name": "primeval:dignity",
+          "proud_soul": 2000,
+          "refine": 7
+        }
+      },
+      // H - 龙蛋
+      "H": {
+        "item": "fantasy_ending:fantasy_ending_ingot"
+      },
+      // V - primeval:revelation
+      "V": {
+        "type": "slashblade:blade",
+        "item": "slashblade:slashblade",
+        "request": {
+          "kill": 7,
+          "name": "primeval:revelation",
+          "proud_soul": 7000,
+          "refine": 7
+        }
+      }
+    },
+    "pattern": [
+      "CDE",
+      "BHF",
+      "AVG"
+    ],
+    // 结果必须是 slashblade:slashblade，刀的实际属性由 "blade" 字段决定
+    "result": {
+      "item": "slashblade:slashblade"
+    },
+    "show_notification": true
+  })
+})

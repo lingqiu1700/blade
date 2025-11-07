@@ -11,10 +11,22 @@ PlayerEvents.tick(event => {
     let leggings = player.legsArmorItem;
     let boots = player.feetArmorItem;
 
+
     if ((head.id == 'foolish:stellar_armor_helmet') && (chestplate.id == 'foolish:stellar_armor_chestplate') && (leggings.id == 'foolish:stellar_armor_leggings') && (boots.id == 'foolish:stellar_armor_boots')) {
+
+
+        let duntick = 0;
+        duntick++;
+
+        if (duntick >=100){
+            player.potionEffects.add('xmsm:dun', 80, 20);
+            duntick = 0;
+        }
 
         player.potionEffects.add('minecraft:strength', 60, 1);
         player.potionEffects.add('minecraft:resistance', 60, 1);//穿星辰套时，给予玩家力量2和抗性2
+        player.potionEffects.add('xmsm:stellar', 100, 0);//给予玩家星辰光环效果
+
 
         if ((health / maxHealth) <= 0.35) {
             player.potionEffects.add('minecraft:strength', 60, 3);
@@ -26,14 +38,5 @@ PlayerEvents.tick(event => {
                 player.potionEffects.add('minecraft:strength', 60, 2);
                 player.potionEffects.add('minecraft:resistance', 60, 2);//穿星辰套血量低于70%时，给予玩家力量3和抗性3
             }
-
-        if (player.getAttributeBaseValue('fantasy_ending:evasion') !== 1) {
-            player.setAttributeBaseValue('fantasy_ending:evasion', 0.2);//该闪避效果和饰品效果不叠加
-        }
-    }
-    else {
-        if (player.getAttributeBaseValue('fantasy_ending:evasion') == 0.2){
-            player.setAttributeBaseValue('fantasy_ending:evasion', 0);//脱下星辰套时，移除闪避效果
-        }
     }
 })

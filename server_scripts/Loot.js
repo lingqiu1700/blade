@@ -91,6 +91,17 @@ LootJS.modifiers((event) => {
 });
 
 LootJS.modifiers((event) => {
+    mhtable.forEach(id => {
+        event
+            .addEntityLootModifier(id)
+            .killedByPlayer()
+            .randomChance(0.05)
+            .addLoot("xmsm:coagulatedclot");
+    });
+});
+
+
+LootJS.modifiers((event) => {
     // foolish:astralis 掉落
     event
         .addEntityLootModifier("foolish:astralis")

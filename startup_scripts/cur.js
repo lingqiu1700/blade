@@ -416,10 +416,6 @@ StartupEvents.registry('item', event => {
                 entity.playSound(randomSound, 1, 1)
                 return entity instanceof $Player && $SuperpositionHandler.isTheCursedOne(entity)
             })
-            .canUnequip((item, context) => {
-                let entity = context.entity()
-                return entity instanceof $Player && entity.isCreative()
-            })
             .modifyAttribute("minecraft:generic.max_health", "max_health", 25, "addition")
         )
         .tag("curios:trinkets")
@@ -442,11 +438,7 @@ StartupEvents.registry('item', event => {
                 entity.playSound(randomSound, 1, 1)
                 return entity instanceof $Player && $SuperpositionHandler.isTheCursedOne(entity)
             })
-            .canUnequip((item, context) => {
-                let entity = context.entity()
-                return entity instanceof $Player && entity.isCreative()
-            })
-                        .curioTick((stack,context) => {
+            .curioTick((stack,context) => {
                 let entity = context.entity()
                 entity.potionEffects.add("xmsm:poli", 200, 0, false, false)
             })
@@ -471,11 +463,7 @@ StartupEvents.registry('item', event => {
                 entity.playSound(randomSound, 1, 1)
                 return entity instanceof $Player && $SuperpositionHandler.isTheCursedOne(entity)
             })
-            .canUnequip((item, context) => {
-                let entity = context.entity()
-                return entity instanceof $Player && entity.isCreative()
-            })
-                        .curioTick((stack,context) => {
+            .curioTick((stack,context) => {
                 let entity = context.entity()
                 entity.potionEffects.add("xmsm:kuangqi", 200, 0, false, false)
                 entity.potionEffects.add("minecraft:haste", 200, 1, false, false)
@@ -493,10 +481,6 @@ StartupEvents.registry('item', event => {
             .canEquip((item, context) => {
                 let entity = context.entity()
                 return entity instanceof $Player && $SuperpositionHandler.isTheCursedOne(entity)
-            })
-            .canUnequip((item, context) => {
-                let entity = context.entity()
-                return entity instanceof $Player && entity.isCreative()
             })
             .modifyAttribute("minecraft:generic.armor","armor", 8, "addition")
         )
@@ -520,12 +504,8 @@ StartupEvents.registry('item', event => {
                 entity.playSound(randomSound, 1, 1)
                 return entity instanceof $Player && $SuperpositionHandler.isTheCursedOne(entity)
             })
-            .canUnequip((item, context) => {
-                let entity = context.entity()
-                return entity instanceof $Player && entity.isCreative()
-            })
             .modifyAttribute("minecraft:generic.armor_toughness", "armor_toughness", 4, "addition")
-                        .curioTick((stack,context) => {
+            .curioTick((stack,context) => {
                 let entity = context.entity()
                 entity.potionEffects.add("minecraft:resistance", 200, 1, false, false)
             })
@@ -551,11 +531,7 @@ StartupEvents.registry('item', event => {
                 entity.playSound(randomSound, 1, 1)
                 return entity instanceof $Player && $SuperpositionHandler.isTheCursedOne(entity)
             })
-            .canUnequip((item, context) => {
-                let entity = context.entity()
-                return entity instanceof $Player && entity.isCreative()
-            })
-                        .curioTick((stack,context) => {
+            .curioTick((stack,context) => {
                 let entity = context.entity()
                 entity.potionEffects.add("xmsm:baozou", 200, 0, false, false)
             })
@@ -573,10 +549,6 @@ StartupEvents.registry('item', event => {
             .canEquip((item, context) => {
                 let entity = context.entity()
                 return entity instanceof $Player && $SuperpositionHandler.isTheCursedOne(entity)
-            })
-            .canUnequip((item, context) => {
-                let entity = context.entity()
-                return entity instanceof $Player && entity.isCreative()
             })
             .canEquip((item, context) => {
                 let entity = context.entity()
@@ -601,10 +573,6 @@ StartupEvents.registry('item', event => {
                 let entity = context.entity()
                 return entity instanceof $Player && $SuperpositionHandler.isTheCursedOne(entity)
             })
-            .canUnequip((item, context) => {
-                let entity = context.entity()
-                return entity instanceof $Player && entity.isCreative()
-            })
             .modifyAttribute("minecraft:generic.max_health", "max_health", 20, "addition")
             .modifyAttribute("minecraft:generic.movement_speed", "movement_speed", 0.05, "addition")
         )
@@ -622,10 +590,6 @@ StartupEvents.registry('item', event => {
                 let entity = context.entity()
                 return entity instanceof $Player && $SuperpositionHandler.isTheCursedOne(entity)
             })
-            .canUnequip((item, context) => {
-                let entity = context.entity()
-                return entity instanceof $Player && entity.isCreative()
-            })
             .modifyAttribute("minecraft:generic.max_health", "max_health", 20, "addition")
         )
         .tag("curios:trinkets")
@@ -639,10 +603,6 @@ StartupEvents.registry('item', event => {
             .canEquip((item, context) => {
                 let entity = context.entity()
                 return entity instanceof $Player && $SuperpositionHandler.isTheCursedOne(entity)
-            })
-            .canUnequip((item, context) => {
-                let entity = context.entity()
-                return entity instanceof $Player && entity.isCreative()
             })
             .modifyAttribute("minecraft:generic.max_health", "max_health", 20, "addition")
             .modifyAttribute("minecraft:generic.attack_damage", "attack_damage", 10, "addition")
@@ -662,10 +622,6 @@ StartupEvents.registry('item', event => {
             .canEquip((item, context) => {
                 let entity = context.entity()
                 return entity instanceof $Player && $SuperpositionHandler.isTheCursedOne(entity)
-            })
-            .canUnequip((item, context) => {
-                let entity = context.entity()
-                return entity instanceof $Player && entity.isCreative()
             })
             .modifyAttribute("minecraft:generic.armor_toughness", "armor_toughness", 8, "addition")
             .curioTick((stack,context) => {
