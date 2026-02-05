@@ -62,19 +62,19 @@ StartupEvents.registry('mob_effect',event => {
 })
 
 StartupEvents.registry('mob_effect', event => {
-    event.create('xmsm:glj') // 创建新的效果粒子
+    event.create('xmsm:glj_effect') // 创建新的效果粒子
         .displayName('高洁的誓言') // 设置效果名称
         .color(0xFF69B4) // 效果粒子颜色设置为粉色
         .beneficial() // 归类为有益效果
         .modifyAttribute(
             'minecraft:generic.armor', // 要修改的属性：盔护甲值
-            'a1b2c3d4-e5f6-7a8b-9c0d-e1f2g3h4i5j6', // 唯一标识符 UUID
+            'f0ac5096-9f8d-480a-a3ef-68516521e9ba', // 唯一标识符 UUID
             0.01, // 增加1%护甲值
             "multiply_total" // 按最终值进行乘法操作
         )
         .modifyAttribute(
             'minecraft:generic.armor_toughness', // 要修改的属性：盔甲韧性
-            'k7l8m9n0-o1p2-q3r4-s5t6-u7v8w9x0y1z2', // 唯一标识符 UUID
+            '27742048-9dd6-49cf-9c35-ca017163837c', // 唯一标识符 UUID
             0.01, // 增加 0.1 的盔甲韧性
             "multiply_total" // 按最终值进行乘法操作
         )
@@ -120,6 +120,19 @@ StartupEvents.registry('mob_effect', event => {
 })
 
 StartupEvents.registry('mob_effect', event => {
+  event.create('xmsm:ghp')
+  .displayName('龙之自尊')
+  .color(0x8B4513) // 效果粒子颜色设置为马鞍棕色
+  .beneficial() // 归类为有益效果
+  .modifyAttribute(
+    'l2damagetracker:damage_reduction',
+    'd4e5f6a7-b8c9-0d1e-2f3-4a5b6c7d8e9f', // 唯一标识符 UUID
+    -0.2, // 减少20%所受伤害
+    "multiply_total"
+  )
+})
+
+StartupEvents.registry('mob_effect', event => {
   event.create('xmsm:shixue')
   .displayName('嗜血')
   .color(0x8B0000) // 效果粒子颜色设置为深红色
@@ -127,7 +140,7 @@ StartupEvents.registry('mob_effect', event => {
     .modifyAttribute(
       'minecraft:generic.attack_damage', // 要修改的属性：攻击伤害
       '2c3d4e5f-6a7b-8c9d-0e1f-2a3b4c5d6e7f', // 唯一标识符 UUID
-      0.05, // 增加25%攻击力
+      0.05, // 增加5%攻击力
       "multiply_total" // 按最终值进行乘法操作
     )
     .modifyAttribute(
@@ -135,6 +148,19 @@ StartupEvents.registry('mob_effect', event => {
         'f1e2d3c4-b5a6-7980-1a2b-3c4d5e6f7g8h', // 唯一标识符 UUID
         0.01, // 增加 0.1 的速度
         "multiply_total" // 按最终值进行乘法操作
+    )
+})
+
+StartupEvents.registry('mob_effect', event => {
+  event.create('xmsm:yuxue')
+  .displayName('浴血')
+  .color(0xFF6347) // 效果粒子颜色设置为番茄红
+  .beneficial() 
+    .modifyAttribute(
+      'slashblade:slashblade_damage',
+      'a1b2c3d4-e5f6-7a8b-9c0d-e1f2g3h4i5j6', // 唯一标识符 UUID
+      0.1,
+      "multiply_total"
     )
 })
 

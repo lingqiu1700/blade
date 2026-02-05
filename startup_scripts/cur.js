@@ -508,6 +508,7 @@ StartupEvents.registry('item', event => {
             .curioTick((stack,context) => {
                 let entity = context.entity()
                 entity.potionEffects.add("minecraft:resistance", 200, 1, false, false)
+                entity.potionEffects.add("xmsm:ghp", 200, 1, false, false)
             })
         )
         .tag("curios:trinkets")

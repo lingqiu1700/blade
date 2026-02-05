@@ -96,7 +96,7 @@ ServerEvents.recipes(event => {
         "type": "goety:ritual", //仪式配方
         "ritual_type": "goety:summon", //召唤
         "activation_item": {
-          "item": "borm_in_chaos_v1:death_totem" //死亡图腾
+          "item": "irons_spellbooks:wayward_compass" //激活物品
         },
         "craftType": "sabbath", //仪式类型
         "entity_to_summon": "irons_spellbooks:dead_king", //召唤的实体(这里是死王)

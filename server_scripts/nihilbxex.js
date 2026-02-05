@@ -1,6 +1,7 @@
 // @Dr.饼藏 你真该死啊
 let heldItemTime = {};       // 记录玩家手持特定刀的持续时间（单位tick）
 let lastTickRank = {};
+let nihilbxexkiller = {};
 
 const nihilbxexBladeCheck = (item) => { // 判断是否为死念终
     if (!item || item.id !== 'slashblade:slashblade') return false;
@@ -21,11 +22,17 @@ PlayerEvents.tick(event => {
         return;
     }
     
+
+    if (!nihilbxexkiller[player.id]) {
+        nihilbxexkiller[player.id] = 0;
+    }
+
     //计时器
     if (!heldItemTime[player.id]) { 
         heldItemTime[player.id] = 0;
     };
     heldItemTime[player.id]++;
+
 
 
     if (heldItemTime[player.id] >= 100) { // 持刀时间5秒触发
@@ -57,7 +64,12 @@ PlayerEvents.tick(event => {
         }
         
         heldItemTime[player.id] = 0; // 完成一次检测后重置持有时间
-    } 
+    }
+
+    if (nihilbxexkiller[player.id] >0){
+        player.potionEffects.add('xmsm:shixue',105,nihilbxexkiller[player.id]);
+    }
+
 });
 
 
@@ -81,6 +93,10 @@ EntityEvents.death(event => {
 
 
         let newamplifier = killer + 1;
+
+        let nihilbxexkillerPlay = nihilbxexkiller[player.id] || 0;
+
+        nihilbxexkillerPlay = newamplifier - 1;
 
         if (newamplifier > 255){
             newamplifier = 255; 

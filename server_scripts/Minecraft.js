@@ -10,7 +10,7 @@ ServerEvents.recipes(event => {
           'ABA'   // 第三行：A、B、A
       ],
       {
-          A: 'born_in_chaos_v1:ethereal_spirit',  // A位材料：以太之灵（来自born_in_chaos_v1模组）
+          A: 'celestial_artifacts:the_end_dust',  // A位材料：
           B: 'goety:cursed_cage',                 // B位材料：诅咒笼（来自goety模组）
           C: 'l2complements:soul_flame'           // C位材料：灵魂之火（来自l2complements模组）
       }
@@ -359,13 +359,63 @@ ServerEvents.recipes(event => {
   )
 
   event.shapeless(
-    '4x born_in_chaos_v1:holiday_candy', // 输出物品：4个节日糖果
-    ['minecraft:sugar', 'minecraft:sugar','born_in_chaos_v1:marigolds'] // 输入物品：糖和金盏花
+    'xmsm:ibin',
+    ['xmsm:goldshi','xmsm:goldshi','xmsm:goldshi','xmsm:goldshi','xmsm:goldshi','xmsm:goldshi','xmsm:goldshi'] // 输入物品：金屎
   )
 
   event.shapeless(
-    'xmsm:ibin',
-    ['xmsm:goldshi','xmsm:goldshi','xmsm:goldshi','xmsm:goldshi','xmsm:goldshi','xmsm:goldshi','xmsm:goldshi'] // 输入物品：金屎
+    '10x xmsm:yinhe',
+    ['xmsm:shi']
+  )
+
+  event.shapeless(
+    '10x xmsm:yinhe',
+    ['xmsm:guanglili']
+  )
+
+  event.shapeless(
+    '10x xmsm:yinhe',
+    ['xmsm:anshuang']
+  )
+
+  event.shapeless(
+    '10x xmsm:yinhe',
+    ['xmsm:anlong']
+  )
+
+  event.shapeless(
+    '10x xmsm:yinhe',
+    ['xmsm:guangheipi']
+  )
+
+  event.shapeless(
+    '10x xmsm:yinhe',
+    ['xmsm:shan']
+  )
+
+  event.shapeless(
+    '10x xmsm:yinhe',
+    ['xmsm:dage']
+  )
+
+  event.shapeless(
+    '10x xmsm:yinhe',
+    ['xmsm:guangma']
+  )
+
+  event.shapeless(
+    '10x xmsm:yinhe',
+    ['xmsm:glj']
+  )
+
+  event.shapeless(
+    '10x xmsm:yinhe',
+    ['jiaoyue']
+  )
+
+  event.shapeless(
+    '10x xmsm:yinhe',
+    ['xmsm:buqu']
   )
 
     event.shapeless(

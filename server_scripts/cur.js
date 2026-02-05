@@ -143,6 +143,7 @@ PlayerEvents.tick(event => {
             let max_health = player.maxHealth;
             const dun = (max_health * 0.2)/4;
             player.potionEffects.add('minecraft:absorption', 100, dun, false, false); // 添加吸收效果
+            player.potionEffects.add('xmsm:dun', 100, dun, false, false);
         }
         if (pd.wudiTick >= 200) {
             pd.wudiTick = 0;
@@ -163,11 +164,11 @@ PlayerEvents.tick(event => {
         if (entityList != null) {
             for (let entities of entityList) // 遍历所有实体
             {
-                if (entities.isPlayer() && entities.getUuid() != player.getUuid()) // 判断是否是其他玩家
+                if (entities.isPlayer()) // 判断是否是玩家
                 {
-                    if (entities.potionEffects.isActive('minecraft:resistance') == 0) // 如果实体没有抗性buff
+                    if (entities.potionEffects.isActive('xmsm:ghp') == 0) // 如果实体没有抗性buff
                     {
-                        entities.potionEffects.add('minecraft:resistance', 60, 1); // 添加抗性buff
+                        entities.potionEffects.add('xmsm:ghp', 60, 1); // 添加抗性buff
                     }
                 }
             }
@@ -233,7 +234,7 @@ PlayerEvents.tick(event => {
         const maxHealth = player.maxHealth;
         const g = health / maxHealth;
         const s = (1-g) * 100;
-        player.potionEffects.add('xmsm:glj', 40,s, false, false);
+        player.potionEffects.add('xmsm:glj_effect', 40,s, false, false);
     }
 
     if (isEquippedCurio(player, BUQU)) {
@@ -257,6 +258,7 @@ PlayerEvents.tick(event => {
   'minecraft:unluck',
   'minecraft:blindness',
   'minecraft:levitation',
+  'minecraft:wither',
   'mutantmonsters:chemical_x',
   'l2complements:flame',
   'l2complements:frozen',
@@ -264,16 +266,17 @@ PlayerEvents.tick(event => {
   'l2complements:curse',
   'l2complements:armor_reduce',
   'alexscaves:magnetizing',
+  'fantasy_ending:ban_healing',
 ];          
 
     if (player.potionEffects.isActive('xmsm:mianyi')) {
+        
         HARMFUL_EFFECT.forEach(effect => {
                 player.removeEffect(effect);
         });
     }
+
 });
-
-
 
 
 
@@ -298,6 +301,8 @@ PlayerEvents.tick(event => {
         }
     }
     })
+
+
 
     EntityEvents.hurt(event => {
     const entity = event.entity;

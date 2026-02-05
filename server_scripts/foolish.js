@@ -15,12 +15,12 @@ PlayerEvents.tick(event => {
     if ((head.id == 'foolish:stellar_armor_helmet') && (chestplate.id == 'foolish:stellar_armor_chestplate') && (leggings.id == 'foolish:stellar_armor_leggings') && (boots.id == 'foolish:stellar_armor_boots')) {
 
 
-        let duntick = 0;
-        duntick++;
+        let pd = player.persistentData;
+        pd.duntick = (pd.duntick ?? 0) + 1;
 
-        if (duntick >=100){
+        if (pd.duntick >=100){
             player.potionEffects.add('xmsm:dun', 80, 20);
-            duntick = 0;
+            pd.duntick = 0;
         }
 
         player.potionEffects.add('minecraft:strength', 60, 1);

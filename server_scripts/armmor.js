@@ -113,12 +113,13 @@ PlayerEvents.tick((event) => {
 
     if((head.id == 'gobber2:gobber2_helmet_dragon') && (chestplate.id == 'gobber2:gobber2_chestplate_dragon') && (leggings.id == 'gobber2:gobber2_leggings_dragon') && (boots.id == 'gobber2:gobber2_boots_dragon')) {
 
-        let dragontick = 0;
-        dragontick++;
+        let pd = player.persistentData;
 
-        if (dragontick >=100){
-            player.potionEffects.add('xmsm:dun', 80 ,35);
-            dragontick = 0;
+        pd.dragontick = (pd.dragontick ?? 0) + 1;
+
+        if (pd.dragontick >=100){
+            player.potionEffects.add('xmsm:dun', 101 ,35);
+            pd.dragontick = 0;
         }
 
         player.potionEffects.add('minecraft:strength', 60, 3);
@@ -139,11 +140,14 @@ PlayerEvents.tick((event) => {
         player.potionEffects.add('minecraft:saturation',60 , 0);
         player.potionEffects.add('xmsm:sculkium',60,0);//给予玩家幽匿的庇护效果
 
-        let sculktick = 0;
-        sculktick++;
-        if (sculktick >=100){
-            player.potionEffects.add('xmsm:dun', 80 ,40);
-            sculktick = 0;
+
+        let pd = player.persistentData;
+
+        pd.sculktick = (pd.sculktick ?? 0) + 1;
+        pd.sculktick++;
+        if (pd.sculktick >=100){
+            player.potionEffects.add('xmsm:dun', 101 ,40);
+            pd.sculktick = 0;
         }
     }
 
@@ -186,11 +190,13 @@ PlayerEvents.tick((event) => {
         player.potionEffects.add('minecraft:speed',60,2);
         player.potionEffects.add('xmsm:dragonsteel_ice',60,0);//给予玩家冰龙钢的庇护效果
 
-        let icetick = 0;
-        icetick++;
-        if (icetick >=100){
-            player.potionEffects.add('xmsm:dun', 80 ,20);
-            icetick = 0;
+
+        let pd = player.persistentData;
+        pd.icetick = (pd.icetick ?? 0) + 1;
+        pd.icetick++;
+        if (pd.icetick >=100){
+            player.potionEffects.add('xmsm:dun', 101 ,20);
+            pd.icetick = 0;
         }
     }
 

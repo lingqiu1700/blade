@@ -11,6 +11,7 @@ StartupEvents.registry("item", (event) => {
     event.create("xmsm:shengyueshuqian");
     event.create("xmsm:jindeng");
     event.create("xmsm:gulaomenghua");
+    event.create("xmsm:yinhe")
 })
 
 StartupEvents.registry("sound_event", (event) => {

@@ -43,8 +43,7 @@ ServerEvents.tags('entity_type', event => {
     'mowziesmobs:frostmaw','mowziesmobs:umvuthi','iceandfire:dread_lich','iceandfire:dread_thrall',
     'iceandfire:dread_ghoul','iceandfire:dread_knight','iceandfire:dread_scuttler','iceandfire:dread_beast',
     'alexsmobs:void_worm','alexsmobs:warped_mosco','cataclysm:ender_golem','cataclysm:endermaptera',
-    'born_in_chaos_v1:lord_pumpkinhead','born_in_chaos_v1:lifestealer','born_in_chaos_v1:missioner',
-    'born_in_chaos_v1:fallen_chaos_knight','twilightforest:giant_miner','twilightforest:armored_giant',
+    'twilightforest:giant_miner','twilightforest:armored_giant',
     'twilightforest:troll','alexscaves:magnetron','alexscaves:brainiac','minecraft:warden',
     'minecraft:elder_guardian','alexsmobs:farseer','cataclysm:ignited_berserker','cataclysm:the_prowler',
     'cataclysm:coral_golem','cataclysm:coralssus','cataclysm:amethyst_crab','cataclysm:wadjet',
@@ -54,6 +53,6 @@ ServerEvents.tags('entity_type', event => {
     'soulsweapons:returning_knight','soulsweapons:moonknight','soulsweapons:chaos_monarch','soulsweapons:night_prowler',
     'soulsweapons:day_stalker','twilightforest:naga','twilightforest:lich','twilightforest:minoshroom',
     'twilightforest:knight_phantom','twilightforest:alpha_yeti','twilightforest:hydra','twilightforest:snow_queen',
-    'twilightforest:ur_ghast','irons_spellbooks:dead_king'
+    'twilightforest:ur_ghast','irons_spellbooks:dead_king','irons_spellbooks:summoned_zombie','alexsmobs:farseer'
   ])
 })
