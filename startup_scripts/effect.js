@@ -601,7 +601,7 @@ StartupEvents.registry('mob_effect', event => {
   .modifyAttribute(
     'slashblade:slashblade_damage',
     'b3c4d5e6-f7g8-h9i0-j1k2-l3m4n5o6p7q8',
-    0.5, // 增加50%斩击伤害
+    2.5, // 增加250%斩击伤害
     "multiply_total"
   )
 })
@@ -832,5 +832,30 @@ StartupEvents.registry('mob_effect', event => {
     'a1b2c3d4-e5f6-7a8b-9c0d-e1f2g3h4i5j6', // 唯一标识符 UUID
     20, // 增加20点最大生命值
     "addition" // 按最终值进行加法操作
+  )
+})
+
+StartupEvents.registry('mob_effect', event => {
+  event.create('xmsm:rouse')
+  .displayName('神之力')
+  .color(0xFF69B4) // 效果粒子颜色设置为热粉色
+  .beneficial()
+  .modifyAttribute(
+    'minecraft:generic.attack_damage', // 要修改的属性：攻击伤害
+    'a1b2c3d4-e5f6-7a8b-9c0d-e1f2g3h4i5j6', // 唯一标识符 UUID
+    0.5, // 增加50%攻击力
+    "multiply_total" // 按最终值进行乘法操作
+  )
+  .modifyAttribute(
+    'slashblade:slashblade_damage',
+    'b3c4d5e6-f7g8-h9i0-j1k2-l3m4n5o6p7q8',
+    1.5, // 增加150%斩击伤害
+    "multiply_total"
+  )
+  .modifyAttribute(
+    'l2damagetracker:damage_reduction',
+    'd4e5f6a7-b8c9-0d1e-2f3-4a5b6c7d8e9f',
+    -0.5, // 负值表示减少
+    "multiply_total"
   )
 })

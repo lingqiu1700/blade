@@ -10,7 +10,6 @@ StartupEvents.registry("item", (event) => {
     event.create("tayori:t9","music_disc").song("tayori:music.t9",199).tag("minecraft:music_discs");
     event.create("tayori:t10","music_disc").song("tayori:music.t10",261).tag("minecraft:music_discs");
     event.create("tayori:t11","music_disc").song("tayori:music.t11",217).tag("minecraft:music_discs");
-    event.create("tayori:yue","music_disc").song("tayori:music.yue",244).tag("minecraft:music_discs");
 })
 
 StartupEvents.registry("sound_event", (event) => {
@@ -25,5 +24,4 @@ StartupEvents.registry("sound_event", (event) => {
     event.create('tayori:music.t9');
     event.create('tayori:music.t10');
     event.create('tayori:music.t11');
-    event.create('tayori:music.yue');
 })

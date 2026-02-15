@@ -8,6 +8,16 @@ const aeon = (item) => {
     bladeState.translationKey === "item.slashblade.aeon";
 }
 
+const rouse = (item) => {
+    if (!item || item.id != 'slashblade:slashblade') return false;
+    let bladeState = item.nbt?.bladeState;
+    if (!bladeState) return false;
+    if (bladeState.translationKey === "item.slashblade.nier" || bladeState.translationKey === "item.slashblade.aeon" || bladeState.translationKey === "item.slashblade.deligun" || bladeState.translationKey === "item.slashblade.chronos_blade" || bladeState.translationKey === "item.slashblade.chronosn" || bladeState.translationKey === "item.prinegorerouse.erebus_blade" || bladeState.translationKey === "item.prinegorerouse.protogenoi_blade"){
+        return true;
+    };
+        return false;
+}
+
 
 ServerEvents.recipes(event => {
     event.remove({mod : 'prinegorerouse'});
@@ -39,8 +49,12 @@ PlayerEvents.tick(event => {
     let heldItem = player.mainHandItem; //获取主手物品（拔刀剑只在主手时生效此效果）
     let playerinvulnerable = invulnerable[player.id] || false;
 
-    if (!heldItem || !aeon(heldItem)) {
+    if (!heldItem) {
         return;
+    }
+
+    if (rouse(heldItem)){
+        player.potionEffects.add("xmsm:rouse", 220,0,false,false);
     }
 
     if (aeon(heldItem)){

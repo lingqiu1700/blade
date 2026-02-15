@@ -56,4 +56,18 @@ ServerEvents.recipes(event => {
         "consumptionRate": 10,  // 每tick消耗速率
         "drainRate": 1000  // 祭坛每tick流速
     })
+
+    event.custom({
+        "type": "bloodmagic:altar",
+        "input": {
+            "item": "xmsm:bloodessence"
+        },
+        "output": {
+            "item": "bloodmagic:masterbloodorb"
+        },
+        "upgradeLevel": 4,
+        "altarSyphon": 40000,
+        'consumptionRate': 10,
+        "drainRate": 1000
+    })
 })

@@ -14,5 +14,11 @@ ServerEvents.recipes(event => {
 ServerEvents.recipes(event => {
     event.remove({output: 'bloodmagic:altar'});
     event.remove({id : 'primeval:day'});
-    event.remove({id : 'legendblade:eiily'})
+    event.remove({id : 'legendblade:eiily'});
+    event.remove({id : 'bloodmagic:hellforged_block'});
+    event.remove({output: 'bloodmagic:ingot_hellforged'});
+    event.remove({id : 'bloodmagic:largebloodstonebrick'});
+    event.remove({output: 'draconicevolution:grinder'});
+    event.remove({mod : 'fantasy_ending'});
+    event.remove({id : 'slashblade:aeon'});
 })

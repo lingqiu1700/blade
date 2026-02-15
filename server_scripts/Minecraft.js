@@ -342,6 +342,20 @@ ServerEvents.recipes(event => {
     }
   )
 
+  event.shaped(
+    Item.of('fantasy_ending:the_domain_of_fade'),
+    [
+      'ABA',
+      'ACA',
+      'ABA'
+    ],
+    {
+      A: 'fantasy_ending:fantasy_ending_ingot',
+      B: 'fantasy_ending:fantasy_factor',
+      C: 'celestial_artifacts:prayer_crown'
+    }
+  )
+
   // 自定义熔炉熔炼配方：腐肉烧制成皮革
   event.smelting(
       'minecraft:leather',        // 输出物品：皮革
@@ -351,6 +365,11 @@ ServerEvents.recipes(event => {
   event.smelting(
     'minecraft:wither_skeleton_skull',        // 输出物品：凋零骷髅头颅
     'minecraft:skeleton_skull'    // 输入物品：骷髅头颅
+  )
+
+  event.shapeless(
+    'fantasy_ending:fantasy_ending_ingot',
+    ['enigmaticlegacy:evil_ingot','cataclysm:witherite_ingot','cataclysm:cursium_ingot','cataclysm:ignitium_ingot','iceandfire:dragonsteel_fire_ingot','iceandfire:dragonsteel_ice_ingot','iceandfire:dragonsteel_lightning_ingot','enigmaticlegacy:etherium_ingot','gobber2:gobber2_ingot_end']
   )
 
   event.shapeless(
@@ -410,7 +429,7 @@ ServerEvents.recipes(event => {
 
   event.shapeless(
     '10x xmsm:yinhe',
-    ['jiaoyue']
+    ['xmsm:jiaoyue']
   )
 
   event.shapeless(
@@ -422,6 +441,12 @@ ServerEvents.recipes(event => {
         '8x bloodmagic:largebloodstonebrick',
         ['#forge:stone', 'xmsm:bloodessence'] // 输入物品：石头和血精华
     )
+
+    event.shapeless(
+      'xmsm:unclean_blood_essence',
+      ['xmsm:bloodessence','goety:unholy_blood']
+    )
+    .keepIngredient('goety:unholy_blood')
 
   event.smithing(
     'projecte:dark_matter', // 输出物品：暗物质
@@ -533,6 +558,30 @@ ServerEvents.recipes(event => {
       }
     )
 })
+
+BlockEvents.rightClicked(event => {
+    // 避免副手触发两次
+    if (event.hand == "OFF_HAND") return;
+
+    let player = event.getPlayer();
+    if (player == null) return;
+
+    let item = event.getItem();
+
+    // 判断手中物品 + 被右键的方块
+    if (item.id === 'xmsm:unclean_blood_essence'
+        && event.block.id === 'gobber2:gobber2_block_end') {
+
+        item.shrink(1);
+
+        //破坏方块并掉落 bloodmagic:dungeon_metal
+        event.block.popItem('bloodmagic:dungeon_metal');
+
+        event.level.destroyBlock(event.block.pos, false);
+    }
+});
+
+
 
 
 
@@ -662,4 +711,164 @@ ServerEvents.recipes(event => {
     },
     "show_notification": true
   })
+
+  // 合成配方：aeon
+  event.custom({
+    "type": "slashblade:shaped_blade",
+    "blade": "slashblade:aeon", // 合成后刀的内部ID
+    "category": "equipment",
+    "key": {
+      "A": {
+        "type": "slashblade:blade",
+        "item": "slashblade:slashblade",
+        "request": {
+          "kill": 35000,
+          "name": "legendblade:nihilbxex",
+          "proud_soul": 1500000,
+          "refine": 150
+        }
+      },
+      "B": {
+        "item": "goety_revelation:ascension_halo"
+      },
+      "C": {
+        "type": "slashblade:blade",
+        "item": "slashblade:slashblade",
+        "request": {
+          "kill": 50000,
+          "name": "prinegorerouse:protogenoi_blade",
+          "proud_soul": 4000000,
+          "refine": 500
+        }
+      },
+      "D": {
+        "item": "enigmaticlegacy:the_cube"
+      },
+      "E":{
+        "item": "fantasy_ending:the_domain_of_fade"
+      },
+      "F": {
+        "type": "slashblade:blade",
+        "item": "slashblade:slashblade",
+        "request": {
+          "kill": 15000,
+          "name": "primeval:day",
+          "proud_soul": 600000,
+          "refine": 60
+        }
+      },
+      "G": {
+        "type": "slashblade:blade",
+        "item": "yakumoblade:slashblade",
+        "request": {
+          "kill": 20000,
+          "name": "yakumoblade:dragonhexagram",
+          "proud_soul": 800000,
+          "refine": 80
+        }
+      },
+      "H": {
+        "item": "celestial_artifacts:abyss_will_badge"
+      },
+      "V": {
+        "type": "slashblade:blade",
+        "item": "slashblade:slashblade",
+        "request": {
+          "kill": 10000,
+          "name": "primeval:miracle",
+          "proud_soul": 300000,
+          "refine": 30
+        }
+      },
+    },
+    "pattern":[
+      "DEH",
+      "BCF",
+      "AVG"
+    ],
+    "result": {
+      "item": "slashblade:slashblade"
+    },
+    "show_notification": true
+  })
+
+  event.custom({
+    "type": "slashblade:shaped_blade",
+    "blade": "slashblade:aeon", // 合成后刀的内部ID
+    "category": "equipment",
+    "key": {
+      "A": {
+        "type": "slashblade:blade",
+        "item": "slashblade:slashblade",
+        "request": {
+          "kill": 35000,
+          "name": "legendblade:nihilbxex",
+          "proud_soul": 1500000,
+          "refine": 150
+        }
+      },
+      "B": {
+        "item": "goety_revelation:ascension_halo"
+      },
+      "C": {
+        "type": "slashblade:blade",
+        "item": "slashblade:slashblade",
+        "request": {
+          "kill": 50000,
+          "name": "prinegorerouse:protogenoi_blade",
+          "proud_soul": 4000000,
+          "refine": 500
+        }
+      },
+      "D": {
+        "item": "enigmaticlegacy:the_cube"
+      },
+      "E":{
+        "item": "fantasy_ending:the_domain_of_fade"
+      },
+      "F": {
+        "type": "slashblade:blade",
+        "item": "slashblade:slashblade",
+        "request": {
+          "kill": 15000,
+          "name": "primeval:day",
+          "proud_soul": 600000,
+          "refine": 60
+        }
+      },
+      "G": {
+        "type": "slashblade:blade",
+        "item": "yakumoblade:slashblade",
+        "request": {
+          "kill": 20000,
+          "name": "yakumoblade:foxhexagram",
+          "proud_soul": 800000,
+          "refine": 80
+        }
+      },
+      "H": {
+        "item": "celestial_artifacts:abyss_will_badge"
+      },
+      "V": {
+        "type": "slashblade:blade",
+        "item": "slashblade:slashblade",
+        "request": {
+          "kill": 10000,
+          "name": "primeval:miracle",
+          "proud_soul": 300000,
+          "refine": 30
+        }
+      },
+    },
+    "pattern":[
+      "DEH",
+      "BCF",
+      "AVG"
+    ],
+    "result": {
+      "item": "slashblade:slashblade"
+    },
+    "show_notification": true
+  })
+
 })

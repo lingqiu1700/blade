@@ -1,33 +1,4 @@
 ServerEvents.recipes(event => {
-    event.custom(
-        {
-          "type": "goety:ritual", //仪式配方
-          "ritual_type": "goety:summon", //召唤
-          "activation_item": {
-            "item": "born_in_chaos_v1:evil_carved_pumpkin" //邪恶南瓜
-          },
-          "craftType": "sabbath", //仪式类型
-          "entity_to_summon": "born_in_chaos_v1:lord_pumpkinhead", //召唤的实体(这里是南瓜领主)
-          "soulCost": 100, //每秒灵魂消耗
-          "duration": 10, //持续时间
-          "ingredients": [
-            {
-              "item": "born_in_chaos_v1:orbofthe_summoner"  //材料
-            },
-            {
-              "item": "born_in_chaos_v1:transmuting_elixir" 
-            },
-            {
-              "item": "born_in_chaos_v1:holiday_candy"
-            },
-            {
-              "item": "born_in_chaos_v1:holiday_candy"
-            }
-          ],
-          "result": {
-            "item": "goety:jei_dummy/none" //不要管这个
-          }
-        })
     
     event.custom(
       {

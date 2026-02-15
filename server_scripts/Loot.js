@@ -106,13 +106,36 @@ LootJS.modifiers((event) => {
     event
         .addEntityLootModifier("foolish:astralis")
         .killedByPlayer()
-        .addLoot("xmsm:bloodessence");
+        .addLoot(Item.of("xmsm:bloodessence", 64));
 
     // cataclysm:netherite_monstrosity 掉落
     event
         .addEntityLootModifier("cataclysm:netherite_monstrosity")
         .killedByPlayer()
-        .addLoot(Item.of("minecraft:netherite_block", 3));
+        .addLoot(Item.of("minecraft:netherite_block", 30));
+    event
+        .addEntityLootModifier("twilightforest:hydra")
+        .killedByPlayer()
+        .addLoot(Item.of("celestial_artifacts:chaotic_etching"));
+
+    event
+        .addEntityLootModifier("minecraft:ender_dragon")
+        .killedByPlayer()
+        .addLoot(Item.of("celestial_artifacts:origin_etching"))
+        .randomChance(0.2);
+    event
+        .addEntityLootModifier("cataclysm:netherite_monstrosity")
+        .killedByPlayer()
+        .addLoot(Item.of("xmsm:draconic_nether_alloy", 3));
+    event
+        .addEntityLootModifier("minecraft:phantom")
+        .killedByPlayer()
+        .addLoot(Item.of("celestial_core:soaring_wings"))
+        .randomChance(0.05);
+    event
+        .addEntityLootModifier("cataclysm:the_leviathan")
+        .killedByPlayer()
+        .addLoot(Item.of("enigmaticlegacy:ocean_stone"))
 });
 
 

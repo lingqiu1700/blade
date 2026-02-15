@@ -127,6 +127,8 @@ PlayerEvents.tick((event) => {
         player.potionEffects.add('minecraft:luck',60,4);
 
         player.potionEffects.add('xmsm:dragon',60,0);//给予玩家龙的庇护效果
+        player.potionEffects.add('xmsm:dragonsteel_fire',60,0);
+        player.potionEffects.add('xmsm:dragonsteel_ice',60,0);
     }
 
     if ((head.id == 'l2complements:sculkium_helmet') && (chestplate.id == 'l2complements:sculkium_chestplate') && (leggings.id == 'l2complements:sculkium_leggings') && (boots.id == 'l2complements:sculkium_boots')) {

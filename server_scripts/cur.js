@@ -91,7 +91,10 @@ PlayerEvents.tick(event => {
                     if (pd.liliTick >= 99) {
                         if (entities.potionEffects.isActive('minecraft:weakness') == 0)//如果实体没有虚弱buff
                         {
-                            entities.potionEffects.add('minecraft:weakness', 60, 1);//添加虚弱buff
+                            if (entities.maxHealth >= 5000){
+                                entities.potionEffects.add('minecraft:weakness', 60, 9);//添加虚弱buff
+                            }
+                            entities.potionEffects.add('minecraft:weakness', 60, 2);//添加虚弱buff
                         }
                     }
                     if (pd.liliTick >= 115) {
@@ -122,7 +125,7 @@ PlayerEvents.tick(event => {
                     if (pd.anTick >= 99) {
                         if (entities.potionEffects.isActive('minecraft:slowness') == 0)//如果实体没有缓慢buff
                         {
-                            entities.potionEffects.add('minecraft:slowness', 60, 1);//添加缓慢buff
+                            entities.potionEffects.add('minecraft:slowness', 60, 4);//添加缓慢buff
                         }
                     }
                     if (pd.anTick >= 115) {
@@ -130,24 +133,6 @@ PlayerEvents.tick(event => {
                     }
                 }
             }
-        }
-    }
-
-    //暗龙
-    if (isEquippedCurio(player, ANLONG)) {
-        let pd = player.persistentData;
-        pd.anlongTick = (pd.anlongTick ?? 0) + 1;
-        pd.wudiTick = (pd.wudiTick ?? 0) + 1;
-        if (pd.anlongTick >= 100) {
-            pd.anlongTick = 0;
-            let max_health = player.maxHealth;
-            const dun = (max_health * 0.2)/4;
-            player.potionEffects.add('minecraft:absorption', 100, dun, false, false); // 添加吸收效果
-            player.potionEffects.add('xmsm:dun', 100, dun, false, false);
-        }
-        if (pd.wudiTick >= 200) {
-            pd.wudiTick = 0;
-            player.potionEffects.add('minecraft:resistance', 20, 4, false, false); // 添加抗性效果
         }
     }
 
@@ -228,14 +213,6 @@ PlayerEvents.tick(event => {
 }
 
     //如果玩家装备了E7神器
-
-    if (isEquippedCurio(player, GLJ)) {
-        const health = player.health;
-        const maxHealth = player.maxHealth;
-        const g = health / maxHealth;
-        const s = (1-g) * 100;
-        player.potionEffects.add('xmsm:glj_effect', 40,s, false, false);
-    }
 
     if (isEquippedCurio(player, BUQU)) {
         const pd = player.persistentData;
@@ -435,3 +412,40 @@ PlayerEvents.tick(event => {
         console.error(`[cur.js] 在 PlayerEvents.tick 中发生错误: ${error}`);
     }
 });
+
+PlayerEvents.tick(event => {
+    const player = event.player;
+    if (!player.isAlive()) return;
+
+     if (isEquippedCurio(player, GLJ)) {
+        const health = player.health;
+        const maxHealth = player.maxHealth;
+        let g = health / maxHealth;
+        let s = (1-g) * 100;
+        if(player.isAlive()){
+        player.potionEffects.add('xmsm:glj_effect', 40, s, false, false);
+        }
+    }
+})
+
+PlayerEvents.tick(event => {
+    const player = event.player;
+    if (!player.isAlive()) return;
+    if (isEquippedCurio(player, ANLONG)) {
+        let pd = player.persistentData;
+        pd.anlongTick = (pd.anlongTick ?? 0) + 1;
+        pd.wudiTick = (pd.wudiTick ?? 0) + 1;
+        if (pd.anlongTick >= 100) {
+            pd.anlongTick = 0;
+            const max_health = player.maxHealth;
+            const dun = (max_health * 0.2)/4;
+            if (dun >= 255) dun = 255;
+            player.potionEffects.add('minecraft:absorption', 100, dun, false, false); // 添加吸收效果
+            player.potionEffects.add('xmsm:dun', 100, dun, false, false);
+        }
+        if (pd.wudiTick >= 200) {
+            pd.wudiTick = 0;
+            player.potionEffects.add('minecraft:resistance', 20, 4, false, false); // 添加抗性效果
+        }
+    }
+})

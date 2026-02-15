@@ -23,6 +23,8 @@ ServerEvents.recipes((event) => {
     event.remove({output: 'gobber2:gobber2_foo'});
     event.remove({output: 'gobber2:gobber2_foo_nether'});
     event.remove({output: 'gobber2:gobber2_foo_end'});
+    event.remove({output: 'gobber2:dragon_elytra'});
+    event.remove({output: 'gobber2:dragon_star'});
 
     event.smelting(
         'gobber2:gobber2_glob',
@@ -356,6 +358,36 @@ ServerEvents.recipes((event) => {
         {
             A: 'gobber2:gobber2_glob_end',
             B: 'minecraft:charcoal',
+        }
+    )
+
+    event.shaped(
+        Item.of('gobber2:dragon_elytra',1),
+        [
+            'ABA',
+            'CDC',
+            'ABA'
+        ],
+        {
+            A: 'gobber2:gobber2_ingot_end',
+            B: 'minecraft:nether_star',
+            C: 'draconicevolution:dragon_heart',
+            D: 'cataclysm:monstrous_horn'
+        }
+    )
+
+    event.shaped(
+        Item.of('gobber2:dragon_star',1),
+        [
+            'ABA',
+            'CDC',
+            'ABA'
+        ],
+        {
+            A: 'gobber2:gobber2_ingot_end',
+            B: 'minecraft:nether_star',
+            C: 'draconicevolution:dragon_heart',
+            D: 'xmsm:draconic_nether_alloy'
         }
     )
 })

@@ -28,8 +28,9 @@ ServerEvents.recipes(event => {
         "output": {
             "item": "slashblade:slashblade",  // 输出仍然是 Slashblade 的刀
             "nbt": {  // 自定义输出刀的NBT数据
-                Enchantments: [ { lvl: 3, id: "minecraft:power" }, { lvl: 5, id: "minecraft:sharpness" }, { lvl: 3, id: "minecraft:smite" }, { lvl: 2, id: "minecraft:bane_of_arthropods" },{ lvl: 3,id: "minecraft:unbreaking"},
-                    { lvl: 2,id: "minecraft:fire_aspect"},{ lvl:3, id: "minecraft:looting"}
+                Enchantments: [ { lvl: 10, id: "minecraft:power" }, { lvl: 15, id: "minecraft:sharpness" }, { lvl: 8, id: "minecraft:smite" }, { lvl: 6, id: "minecraft:bane_of_arthropods" },{ lvl: 6,id: "minecraft:unbreaking"},
+                    { lvl: 2,id: "minecraft:fire_aspect"},{ lvl:5, id: "minecraft:looting"}, { lvl: 5,id: "l2complements:sharp_blade"}, {lvl: 1, id: "celestial_enchantments:vampire_slash"},{lvl:1, id: "celestial_enchantments:fatal_blow"},
+                    {lvl:2, id: "l2complements:cursed_blade"}
                  ],
             }
         },
@@ -55,6 +56,12 @@ ServerEvents.recipes(event => {
         "output": {
             "item": "slashblade:slashblade",  // 输出仍然是 Slashblade 的刀
             "category": "equipment",
+            "nbt": {  // 自定义输出刀的NBT数据
+                Enchantments: [ { lvl: 5, id: "minecraft:power" }, { lvl: 10, id: "minecraft:sharpness" }, { lvl: 5, id: "minecraft:smite" }, { lvl: 4, id: "minecraft:bane_of_arthropods" },{ lvl: 3,id: "minecraft:unbreaking"},
+                    { lvl: 2,id: "minecraft:fire_aspect"},{ lvl:3, id: "minecraft:looting"}, { lvl: 3,id: "l2complements:sharp_blade"}, {lvl: 1, id: "celestial_enchantments:vampire_slash"},{lvl:1, id: "celestial_enchantments:fatal_blow"},
+                    {lvl:1, id: "l2complements:cursed_blade"}
+                 ],
+            }
         },
         "blade": "slashblade_addon:crimsoncherry",
         "upgradeLevel": 1, // 需要2级祭坛
@@ -78,6 +85,15 @@ ServerEvents.recipes(event => {
         "output": {
             "item": "slashblade:slashblade",  // 输出仍然是 Slashblade 的刀
             "category": "equipment",
+            "nbt": {
+                Enchantments: [{ lvl: 10, id: "minecraft:power" }, { lvl: 15, id: "minecraft:sharpness" },
+                { lvl: 8, id: "minecraft:smite" }, { lvl: 6, id: "minecraft:bane_of_arthropods" }, { lvl: 5, id: "minecraft:unbreaking" },
+                { lvl: 2, id: "minecraft:fire_aspect" }, { lvl: 5, id: "minecraft:looting" }, { lvl: 5, id: "l2complements:sharp_blade" }, { lvl: 2, id: "celestial_enchantments:vampire_slash" }, { lvl: 1, id: "celestial_enchantments:fatal_blow" },
+                { lvl: 6, id: "l2complements:cursed_blade" }, { lvl: 3, id: "l2complements:void_touch" },
+                { lvl: 2, id: "fancyenchantments:wind_blade" }, { lvl: 3, id: "fancyenchantments:duellists_prerogative" },
+                { lvl: 2, id: "fancyenchantments:dexterity" }
+                ]
+            }
         },
         "blade": "legendblade:crimsoncherryex", // 指定刀
         "upgradeLevel": 3,  // 需要2级祭坛
@@ -101,8 +117,17 @@ ServerEvents.recipes(event => {
         "output": {
             "item": "slashblade:slashblade",  // 输出仍然是 Slashblade 的刀
             "category": "equipment",
+            "nbt": {
+                Enchantments: [ { lvl: 20, id: "minecraft:power"}, { lvl: 25, id: "minecraft:sharpness"},
+                    { lvl:15, id: "minecraft:smite"}, { lvl: 10, id: "minecraft:bane_of_arthropods" },{ lvl: 10,id: "minecraft:unbreaking"},
+                    { lvl: 5,id: "minecraft:fire_aspect"},{ lvl:10, id: "minecraft:looting"}, { lvl: 10,id: "l2complements:sharp_blade"}, {lvl: 3, id: "celestial_enchantments:vampire_slash"},{lvl:2, id: "celestial_enchantments:fatal_blow"},
+                    {lvl:10, id: "l2complements:cursed_blade"},{lvl: 3, id: "l2complements:void_touch"},
+                    {lvl: 3, id: "fancyenchantments:wind_blade"},{lvl: 5,id: "fancyenchantments:duellists_prerogative"},
+                    {lvl: 3, id: "fancyenchantments:dexterity"}, {lvl: 10,id: "fancyenchantments:sacred_supreme_sharpness"}
+                ]
+            }
         },
-        "blade": "legendblade:nihilulex", // 指定刀
+        "blade": "legendblade:nihilulex", // 炼狱觉醒，耀魂似蛭
         "upgradeLevel": 3,  // 需要3级祭坛
         "altarSyphon": 60000,  // 总消耗生命精华量（LP）
         "consumptionRate": 30,  // 每tick消耗速率

@@ -2,24 +2,6 @@ let $Player = Java.loadClass("net.minecraft.world.entity.player.Player")
 let $SuperpositionHandler = Java.loadClass("com.aizistral.enigmaticlegacy.handlers.SuperpositionHandler")
 const CuriosApi = Java.loadClass('top.theillusivec4.curios.api.CuriosApi');
 const curiosHelper = CuriosApi.getCuriosHelper();
-
-const SHAN = 'xmsm:shan';
-const SHAN0 = 'xmsm:shan0'; 
-const HEALING1 = 'xmsm:healing1';
-const HEALING2 = 'xmsm:healing2';
-const SHI = 'xmsm:shi';
-const LILI = 'xmsm:guanglili';
-const AN = 'xmsm:anshuang';
-const SINIAN = 'legendblade:nihilbxex';
-const GLJ = 'xmsm:glj';
-const ANLONG = 'xmsm:anlong';
-const ghp = 'xmsm:guangheipi';
-const BUQU = 'xmsm:buxu';
-const DAGE = 'xmsm:dage';
-const JIAOYUE = 'xmsm:jiaoyue';
-const GUANGMA = 'xmsm:guangma';
-const TIANPING ='xmsm:tianping';
-
  
 //速度类饰品
 StartupEvents.registry('item', event => {
