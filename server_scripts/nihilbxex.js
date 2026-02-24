@@ -13,6 +13,16 @@ const nihilbxexBladeCheck = (item) => { // 判断是否为死念终
            bladeState.translationKey === "item.legendblade.nihilbxex"; // 物品item名称
 };
 
+const bloodbladeCheck = (item) => {
+    if (!item || item.id !== 'slashblade:slashblade') return false;
+    let bladeState = item.nbt?.bladeState;
+    if (!bladeState) return false;
+    if (bladeState.translationKey === "item.legendblade.nihilbxex" || bladeState.translationKey === "slashblade_addon:nihilex" || bladeState.translationKey === "slashblade_addon:nihilul" || bladeState.translationKey === "slashblade_addon:crimsoncherry" || bladeState.translationKey === "legendblade:crimsoncherryex" || bladeState.translationKey === "legendblade:nihilulex" || bladeState.translationKey === "legendblade:nihilexfake" || bladeState.translationKey === "legendblade:bloodkatana" || bladeState.translationKey === "slashblade_addon:nihilbx" || bladeState.translationKey === "legendblade:shinku"){
+        return true;
+    }
+        return false;
+}
+
 PlayerEvents.tick(event => {
     let player = event.player;
     let heldItem = player.mainHandItem; // 获取玩家主手物品
@@ -49,7 +59,7 @@ PlayerEvents.tick(event => {
                     
                     if (entity.potionEffects.isActive('l2complements:bleed')) { // 判断是否存在流血效果
                         hasBleedingEntity = true;
-                        entity.potionEffects.add('xmsm:shouhu', 120, 5); // 给予破甲效果
+                        entity.potionEffects.add('xmsm:shouhu', 120, 9); // 给予破甲效果
                     }
                 }
             }
@@ -68,6 +78,20 @@ PlayerEvents.tick(event => {
 
     if (nihilbxexkiller[player.id] >0){
         player.potionEffects.add('xmsm:shixue',105,nihilbxexkiller[player.id]);
+    }
+
+    if (bloodbladeCheck(heldItem)){
+        let pojiaentity = player.level.getEntitiesWithin(AABB.of(
+            player.x - 6, player.y - 6, player.z - 6,
+            player.x + 6, player.y + 6, player.z + 6
+        ));
+        if (pojiaentity) {
+            for (let entity of pojiaentity) {
+                if (entity.isLiving() && !entity.isPlayer()) {
+                    entity.potionEffects.add('xmsm:shouhu', 120, 4); // 给予破甲效果
+                }
+            }
+        }
     }
 
 });

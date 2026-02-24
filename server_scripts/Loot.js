@@ -136,6 +136,18 @@ LootJS.modifiers((event) => {
         .addEntityLootModifier("cataclysm:the_leviathan")
         .killedByPlayer()
         .addLoot(Item.of("enigmaticlegacy:ocean_stone"))
+    event
+        .addEntityLootModifier("twilightforest:snow_queen")
+        .killedByPlayer()
+        .addLoot(Item.of("celestial_artifacts:truth_etching"))
+    event
+        .addEntityLootModifier("twilightforest:lich")
+        .killedByPlayer()
+        .addLoot(Item.of("enchantinginfuser:advanced_enchanting_infuser"))
+    event
+        .addEntityLootModifier("irons_spellbooks:dead_king")
+        .killedByPlayer()
+        .addLoot(Item.of("prinegorerouse:chronos",4))
 });
 
 

@@ -356,6 +356,100 @@ ServerEvents.recipes(event => {
     }
   )
 
+  event.shaped(
+    Item.of('celestial_artifacts:prayer_crown'),
+    [
+      'A A',
+      'ABA',
+      'CDC'
+    ],
+    {
+      A: 'origincore:shine_ingot',
+      B: 'minecraft:diamond_block',
+      C: 'origincore:the_sky_ingot',
+      D: 'celestial_artifacts:cross_necklace'
+    }
+  )
+
+  event.shaped(
+    Item.of('l2hostility:ring_of_reflection'),
+    [
+      'ABC',
+      'DED',
+      'FBG'
+    ],
+    {
+      A: 'minecraft:dragon_breath',
+      B: 'lkartifacts:dragon_breath_powder',
+      C: 'l2hostility:slowness',
+      D: 'l2hostility:weakness',
+      E: 'l2hostility:wither',
+      F: 'l2hostility:levitation',
+      G: 'l2hostility:blindness'
+    }
+  )
+
+  event.shaped(
+    Item.of('celestial_artifacts:red_ruby_bracelet'),
+    [
+      ' A ',
+      'ABA',
+      ' C '
+    ],
+    {
+      A: 'minecraft:nether_brick',
+      B: 'celestial_core:treasure_fragment',
+      C: 'goety:soul_ruby'
+    }
+  )
+
+  event.shaped(
+    Item.of('minecraft:lodestone'),
+    [
+      'AAA',
+      'ABA',
+      'AAA'
+    ],
+    {
+      A: '#forge:stone',
+      B: 'goety:soul_ruby'
+    }
+  )
+
+  event.shaped(
+    Item.of('fantasy_ending:uom_spawn_egg'),
+    [
+      'ABC',
+      'DEF',
+      'GHI'
+    ],
+    {
+      A: 'cataclysm:gauntlet_of_guard',
+      B: 'cataclysm:remnant_skull',
+      C: 'cataclysm:soul_render',
+      D: 'cataclysm:abyssal_egg',
+      E: 'fantasy_ending:fantasy_factor',
+      F: 'fantasy_ending:fantasy_ending_ingot',
+      G: 'cataclysm:the_incinerator',
+      H: 'goety_revelation:revelation',
+      I: 'goety_revelation:ascension_halo'
+    }
+  )
+
+  event.shaped(
+    Item.of('enigmaticlegacy:darkest_scroll'),
+    [
+      'ABA',
+      'ACA',
+      'AAA'
+    ],
+    {
+      A: 'minecraft:paper',
+      B: 'projecte:dark_matter',
+      C: 'enigmaticlegacy:darkest_scroll'
+    }
+  )
+
   // 自定义熔炉熔炼配方：腐肉烧制成皮革
   event.smelting(
       'minecraft:leather',        // 输出物品：皮革
@@ -871,4 +965,89 @@ ServerEvents.recipes(event => {
     "show_notification": true
   })
 
+  // 合成配方：真阎魔刀
+  event.custom({
+    "type": "slashblade:shaped_blade",
+    "blade": "yakumoblade:vergil",
+    "category": "equipment",
+    "key": {
+      "A": {
+        "item": "yakumoblade:umle"
+      },
+      "B": {
+        "item": "slashblade:proudsoul_trapezohedron"
+      },
+      "C": {
+        "item": "minecraft:nether_star"
+      },
+      "D": {
+        "item": "minecraft:netherite_ingot"
+      },
+      "E": {
+        "item": "minecraft:dragon_breath"
+      },
+      "F": {
+        "type": "slashblade:blade",
+        "item": "slashblade:slashblade",
+        "request": {
+          "kill": 2000,
+          "name": "slashblade:yamato",
+          "proud_soul": 40000,
+          "refine": 5
+        }
+      }
+    },
+    "pattern": [
+      "ABC",
+      "DEB",
+      "FDA"
+    ],
+    "result": {
+      "item": "slashblade:slashblade"
+    },
+    "show_notification": true
+  })
+
+  // 合成配方：尼尔
+  event.custom({
+  "type": "slashblade:shaped_blade",
+  "blade": "slashblade:nier",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "type": "slashblade:blade",
+      "item": "yakumoblade:slashblade",
+      "request": {
+        "kill": 4000,
+        "name": "yakumoblade:vergil",
+        "proud_soul": 50000,
+        "refine": 100
+      }
+    },
+    "P": {
+      "item": "slashblade:proudsoul_trapezohedron"
+    },
+    "S": {
+      "item": "mowziesmobs:ice_crystal"
+    },
+    "C": {
+      "item": "foolish:sacilic_heart"
+    },
+    "D": {
+      "item": "mowziesmobs:wrought_axe"
+    },
+    "E": {
+      "item": "mowziesmobs:sol_visage"
+    }
+  },
+  "pattern": [
+    "PSP",
+    "CBD",
+    "PEP"
+  ],
+  "result": {
+    "item": "slashblade:slashblade"
+  },
+  "show_notification": true
+})
 })

@@ -53,6 +53,9 @@ ServerEvents.tags('entity_type', event => {
     'soulsweapons:returning_knight','soulsweapons:moonknight','soulsweapons:chaos_monarch','soulsweapons:night_prowler',
     'soulsweapons:day_stalker','twilightforest:naga','twilightforest:lich','twilightforest:minoshroom',
     'twilightforest:knight_phantom','twilightforest:alpha_yeti','twilightforest:hydra','twilightforest:snow_queen',
-    'twilightforest:ur_ghast','irons_spellbooks:dead_king','irons_spellbooks:summoned_zombie','alexsmobs:farseer'
+    'twilightforest:ur_ghast','irons_spellbooks:dead_king','irons_spellbooks:summoned_zombie','alexsmobs:farseer',
+    'iceandfire:fire_dragon','iceandfire:ice_dragon','iceandfire:light_dragon','foolish:astralis','foolish:thunderbird','foolish:pyre',
+    'foolish:varmint_king','foolish:thrasher','foolish:terrorflora','foolish:sacilic_abomination','foolish:scarlant_queen',
+    'machine_lifeform:machine_lifeform'
   ])
 })

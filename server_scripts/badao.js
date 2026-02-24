@@ -8,11 +8,21 @@ const aeon = (item) => {
     bladeState.translationKey === "item.slashblade.aeon";
 }
 
+const nier = (item) => {
+    if (!item || item.id != 'slashblade:slashblade') return false;
+    let bladeState = item.nbt?.bladeState;
+    if (!bladeState) return false;
+    if (bladeState.translationKey === "item.slashblade.nier" || bladeState.translationKey === "item.slashblade.deligun" || bladeState.translationKey === "item.slashblade.chronos_blade"|| bladeState.translationKey === "item.prinegorerouse.erebus_blade"){
+        return true;
+    };
+        return false;
+}
+
 const rouse = (item) => {
     if (!item || item.id != 'slashblade:slashblade') return false;
     let bladeState = item.nbt?.bladeState;
     if (!bladeState) return false;
-    if (bladeState.translationKey === "item.slashblade.nier" || bladeState.translationKey === "item.slashblade.aeon" || bladeState.translationKey === "item.slashblade.deligun" || bladeState.translationKey === "item.slashblade.chronos_blade" || bladeState.translationKey === "item.slashblade.chronosn" || bladeState.translationKey === "item.prinegorerouse.erebus_blade" || bladeState.translationKey === "item.prinegorerouse.protogenoi_blade"){
+    if (bladeState.translationKey === "item.slashblade.chronosn"  || bladeState.translationKey === "item.prinegorerouse.protogenoi_blade"){
         return true;
     };
         return false;
@@ -53,8 +63,12 @@ PlayerEvents.tick(event => {
         return;
     }
 
-    if (rouse(heldItem)){
+    if (nier(heldItem)){
         player.potionEffects.add("xmsm:rouse", 220,0,false,false);
+    }
+
+    if (rouse(heldItem)){
+        player.potionEffects.add("xmsm:rouse", 220,2,false,false);
     }
 
     if (aeon(heldItem)){
@@ -62,6 +76,7 @@ PlayerEvents.tick(event => {
         player.potionEffects.add("minecraft:night_vision", 220, 0, false, false);
         player.potionEffects.add("minecraft:fire_resistance", 220, 0, false, false);
         player.potionEffects.add("minecraft:saturation", 220, 0, false, false);
+        player.potionEffects.add("xmsm:rouse", 220, 255, false, false);
     }
 
     if (aeon(heldItem) && !playerinvulnerable) {
@@ -154,4 +169,3 @@ EntityEvents.death(event => {
         entity.health = max_health;
     }
 })
-

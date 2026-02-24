@@ -45,7 +45,7 @@ ServerEvents.recipes(event => {
                     { lvl: 5, id: "fancyenchantments:fearless_challenger" },
                     { lvl: 5, id: "fancyenchantments:spreading_spores" },
                     { lvl: 5, id: "l2complements:ice_blade" }
-                ]
+                ],
             }
         },
         "blade": "legendblade:bloodkatana", // 炼狱刀血腥
@@ -71,6 +71,8 @@ ServerEvents.recipes(event => {
         "output": {
             "item": "slashblade:slashblade",  // 输出仍然是 Slashblade 的刀
             "category": "equipment",
+            "nbt": {
+            }
         },
         "blade": "slashblade_addon:nihilbx", //炼狱刀死念
         "upgradeLevel": 2,  // 需要1级祭坛
@@ -119,7 +121,7 @@ ServerEvents.recipes(event => {
                     { lvl: 10, id: "fancyenchantments:wind_blade" },
                     { lvl: 10, id: "fancyenchantments:duellists_prerogative" },
                     { lvl: 10, id: "fancyenchantments:sacred_supreme_sharpness" }
-                ]
+                ],
             }
         },
         "blade": "legendblade:shinku", // 炼狱刀真红
@@ -146,46 +148,46 @@ ServerEvents.recipes(event => {
             "item": "slashblade:slashblade",  // 输出仍然是 Slashblade 的刀
             "category": "equipment",
             "nbt": {  // 自定义输出刀的NBT数据
-            Enchantments: [
-    { "lvl": 30, "id": "minecraft:power" },
-    { "lvl": 35, "id": "minecraft:sharpness" },
-    { "lvl": 20, "id": "minecraft:smite" },
-    { "lvl": 15, "id": "minecraft:bane_of_arthropods" },
-    { "lvl": 15, "id": "minecraft:unbreaking" },
-    { "lvl": 8,  "id": "minecraft:fire_aspect" },
-    { "lvl": 15, "id": "minecraft:looting" },
-    { "lvl": 15, "id": "minecraft:mending" },
-    { "lvl": 15, "id": "minecraft:sweeping_edge" },
+                Enchantments: [
+                    { "lvl": 30, "id": "minecraft:power" },
+                    { "lvl": 35, "id": "minecraft:sharpness" },
+                    { "lvl": 20, "id": "minecraft:smite" },
+                    { "lvl": 15, "id": "minecraft:bane_of_arthropods" },
+                    { "lvl": 15, "id": "minecraft:unbreaking" },
+                    { "lvl": 8, "id": "minecraft:fire_aspect" },
+                    { "lvl": 15, "id": "minecraft:looting" },
+                    { "lvl": 15, "id": "minecraft:mending" },
+                    { "lvl": 15, "id": "minecraft:sweeping_edge" },
 
-    { "lvl": 20, "id": "l2complements:sharp_blade" },
-    { "lvl": 20, "id": "l2complements:cursed_blade" },
-    { "lvl": 5,  "id": "l2complements:void_touch" },
-    { "lvl": 5,  "id": "l2complements:eternal" },
-    { "lvl": 5,  "id": "l2complements:wind_sweep" },
+                    { "lvl": 20, "id": "l2complements:sharp_blade" },
+                    { "lvl": 20, "id": "l2complements:cursed_blade" },
+                    { "lvl": 5, "id": "l2complements:void_touch" },
+                    { "lvl": 5, "id": "l2complements:eternal" },
+                    { "lvl": 5, "id": "l2complements:wind_sweep" },
 
-    { "lvl": 15, "id": "celestial_enchantments:death_blade" },
-    { "lvl": 15, "id": "celestial_enchantments:fierce_slash" },
-    { "lvl": 10, "id": "celestial_enchantments:vampire_slash" },
-    { "lvl": 10, "id": "celestial_enchantments:life_shield" },
-    { "lvl": 10, "id": "celestial_enchantments:unstable_blade" },
-    { "lvl": 5,  "id": "celestial_enchantments:fatal_blow" },
-    { "lvl": 5,  "id": "celestial_enchantments:suppression_blade" },
-    { "lvl": 3,  "id": "celestial_enchantments:magic_blade" },
-    { "lvl": 3,  "id": "celestial_enchantments:cluster_awareness" },
+                    { "lvl": 15, "id": "celestial_enchantments:death_blade" },
+                    { "lvl": 15, "id": "celestial_enchantments:fierce_slash" },
+                    { "lvl": 10, "id": "celestial_enchantments:vampire_slash" },
+                    { "lvl": 10, "id": "celestial_enchantments:life_shield" },
+                    { "lvl": 10, "id": "celestial_enchantments:unstable_blade" },
+                    { "lvl": 5, "id": "celestial_enchantments:fatal_blow" },
+                    { "lvl": 5, "id": "celestial_enchantments:suppression_blade" },
+                    { "lvl": 3, "id": "celestial_enchantments:magic_blade" },
+                    { "lvl": 3, "id": "celestial_enchantments:cluster_awareness" },
 
-    { "lvl": 10, "id": "fancyenchantments:advanced_sharpness" },
-    { "lvl": 10, "id": "fancyenchantments:heavy_blow" },
-    { "lvl": 10, "id": "fancyenchantments:dominion" },
-    { "lvl": 10, "id": "fancyenchantments:wind_blade" },
-    { "lvl": 10, "id": "fancyenchantments:duellists_prerogative" },
-    { "lvl": 10, "id": "fancyenchantments:sacred_supreme_sharpness" },
-    { "lvl": 15,  "id": "fancyenchantments:dexterity" },
-    { "lvl": 10,  "id": "fancyenchantments:condition_overload" },
-    { "lvl": 15,  "id": "fancyenchantments:fearless_challenger" },
-    { "lvl": 15,  "id": "fancyenchantments:spreading_spores" },
+                    { "lvl": 10, "id": "fancyenchantments:advanced_sharpness" },
+                    { "lvl": 10, "id": "fancyenchantments:heavy_blow" },
+                    { "lvl": 10, "id": "fancyenchantments:dominion" },
+                    { "lvl": 10, "id": "fancyenchantments:wind_blade" },
+                    { "lvl": 10, "id": "fancyenchantments:duellists_prerogative" },
+                    { "lvl": 10, "id": "fancyenchantments:sacred_supreme_sharpness" },
+                    { "lvl": 15, "id": "fancyenchantments:dexterity" },
+                    { "lvl": 10, "id": "fancyenchantments:condition_overload" },
+                    { "lvl": 15, "id": "fancyenchantments:fearless_challenger" },
+                    { "lvl": 15, "id": "fancyenchantments:spreading_spores" },
 
-    { "lvl": 15,  "id": "l2complements:ice_blade" }
-]
+                    { "lvl": 15, "id": "l2complements:ice_blade" }
+                ],
 
             }
         },
@@ -196,3 +198,4 @@ ServerEvents.recipes(event => {
         "drainRate": 5000  // 祭坛每tick流速
     })
 })
+

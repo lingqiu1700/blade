@@ -1,9 +1,6 @@
-let tick = 0;
 PlayerEvents.tick(event => {
     let player = event.player;
     if (!player || !player.isAlive()) return;
-    tick++;
-    if (tick % 20 !== 0) return;//每20tick执行一次
     let health = player.health;
     let maxHealth = player.maxHealth;
     let head = player.headArmorItem;
@@ -12,7 +9,7 @@ PlayerEvents.tick(event => {
     let boots = player.feetArmorItem;
 
 
-    if ((head.id == 'foolish:stellar_armor_helmet') && (chestplate.id == 'foolish:stellar_armor_chestplate') && (leggings.id == 'foolish:stellar_armor_leggings') && (boots.id == 'foolish:stellar_armor_boots')) {
+    if ((head.id === 'foolish:stellar_armor_helmet') && (chestplate.id === 'foolish:stellar_armor_chestplate') && (leggings.id === 'foolish:stellar_armor_leggings') && (boots.id === 'foolish:stellar_armor_boots')) {
 
 
         let pd = player.persistentData;

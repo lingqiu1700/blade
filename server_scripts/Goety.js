@@ -155,4 +155,30 @@ ServerEvents.recipes(event => {
         }
       }
     )
+
+    event.custom({
+      "type": "goety:ritual",
+      "ritual_type": "goety:craft",
+      "activation_item": {
+        "item": "enigmaticlegacy:enchanter_pearl"
+      },
+      "craftType": "forge",
+      "soulCost": 50,
+      "duration": 20,
+      "ingredients": [
+        { "item": "minecraft:enchanting_table" },
+        { "item": "minecraft:enchanting_table" },
+        { "item": "minecraft:enchanting_table" },
+        { "item": "enchantinginfuser:enchanting_infuser"},
+        { "item": "celestial_enchantments:celestial_enchanting_table"},
+        { "item": "twilightforest:snow_queen_trophy"},
+        { "item": "twilightforest:fiery_tears"},
+        { "item": "twilightforest:fiery_tears"},
+        { "item": "twilightforest:fiery_tears"},
+        { "item": "twilightforest:fiery_tears"},
+      ],
+      "result": {
+        "item": "editenchanting:enchantment_edit_table"
+      }
+    })
 })

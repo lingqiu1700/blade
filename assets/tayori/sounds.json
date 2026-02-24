@@ -87,10 +87,10 @@
             }
         ]
     },
-    "music.yue": {
+    "music": {
         "sounds": [
             {
-                "name": "tayori:yue",
+                "name": "xmsm:vortex",
                 "stream": true
             }
         ]

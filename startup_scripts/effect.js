@@ -849,13 +849,13 @@ StartupEvents.registry('mob_effect', event => {
   .modifyAttribute(
     'slashblade:slashblade_damage',
     'b3c4d5e6-f7g8-h9i0-j1k2-l3m4n5o6p7q8',
-    1.5, // 增加150%斩击伤害
+    2.5, // 增加150%斩击伤害
     "multiply_total"
   )
   .modifyAttribute(
     'l2damagetracker:damage_reduction',
     'd4e5f6a7-b8c9-0d1e-2f3-4a5b6c7d8e9f',
-    -0.5, // 负值表示减少
+    -0.2, // 负值表示减少
     "multiply_total"
   )
 })

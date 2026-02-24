@@ -38,7 +38,7 @@ ServerEvents.recipes(event => {
         "upgradeLevel": 1,  // 需要1级祭坛
         "altarSyphon": 16000,  // 总消耗生命精华量（LP）
         "consumptionRate": 10,  // 每tick消耗速率
-        "drainRate": 100  // 祭坛每tick流速
+        "drainRate": 100  // 祭坛每tick流速s
     })
 
     event.custom({
@@ -92,7 +92,7 @@ ServerEvents.recipes(event => {
                 { lvl: 6, id: "l2complements:cursed_blade" }, { lvl: 3, id: "l2complements:void_touch" },
                 { lvl: 2, id: "fancyenchantments:wind_blade" }, { lvl: 3, id: "fancyenchantments:duellists_prerogative" },
                 { lvl: 2, id: "fancyenchantments:dexterity" }
-                ]
+                ],
             }
         },
         "blade": "legendblade:crimsoncherryex", // 指定刀
@@ -124,7 +124,7 @@ ServerEvents.recipes(event => {
                     {lvl:10, id: "l2complements:cursed_blade"},{lvl: 3, id: "l2complements:void_touch"},
                     {lvl: 3, id: "fancyenchantments:wind_blade"},{lvl: 5,id: "fancyenchantments:duellists_prerogative"},
                     {lvl: 3, id: "fancyenchantments:dexterity"}, {lvl: 10,id: "fancyenchantments:sacred_supreme_sharpness"}
-                ]
+                ],
             }
         },
         "blade": "legendblade:nihilulex", // 炼狱觉醒，耀魂似蛭

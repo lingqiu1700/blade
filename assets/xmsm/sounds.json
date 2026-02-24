@@ -142,5 +142,13 @@
                 "stream": true
             }
         ]
+    },
+    "vortex": {
+        "sounds": [
+            {
+                "name":  "xmsm:vortex",
+                "stream":true
+            }
+        ]
     }
 }

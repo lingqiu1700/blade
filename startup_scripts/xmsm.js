@@ -35,6 +35,7 @@ StartupEvents.registry("sound_event", (event) => {
     event.create("xmsm:guangheipi1");
     event.create("xmsm:guangheipi2");
     event.create("xmsm:guangheipi3");
+    event.create("xmsm:vortex");
 })
 
 StartupEvents.registry("block", (event) => {
